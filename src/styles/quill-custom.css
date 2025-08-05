@@ -1,0 +1,23 @@
+.ql-picker-label[data-value='1']::before {
+  content: 'Título 1' !important;
+}
+
+.ql-picker-label[data-value='2']::before {
+  content: 'Título 2' !important;
+}
+
+.ql-picker-label[data-value='3']::before {
+  content: 'Título 3' !important;
+}
+
+.ql-picker-label[data-value='4']::before {
+  content: 'Título 4' !important;
+}
+
+.ql-picker-label[data-value='5']::before {
+  content: 'Título 5' !important;
+}
+
+.ql-picker-label[data-value='']::before {
+  content: 'Normal' !important;
+}

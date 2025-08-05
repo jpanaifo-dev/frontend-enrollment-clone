@@ -1,0 +1,38 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { Providers } from './providers'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'Matrícula de Postgrado | UNAP',
+  description:
+    'Realiza tu matrícula en la Escuela de Postgrado de la Universidad Nacional de la Amazonía Peruana. Gestiona tu inscripción de manera fácil y rápida para acceder a nuestros programas académicos de excelencia.',
+  openGraph: {
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/coniap-iiap.appspot.com/o/EPG%2Fbanner_matricula.webp?alt=media&token=8266aa05-9ae2-4bbb-ba20-9c88c25564dd',
+        width: 1000,
+        height: 630,
+        alt: 'Matrícula de Postgrado | UNAP',
+      },
+    ],
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="es">
+      <body
+        className={`${inter.className} antialiased bg-primary-50 text-foreground dark:bg-background-dark dark:text-foreground-dark`}
+      >
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  )
+}
