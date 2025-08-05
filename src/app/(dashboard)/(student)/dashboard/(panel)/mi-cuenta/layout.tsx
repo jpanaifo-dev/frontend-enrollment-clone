@@ -1,5 +1,5 @@
 import { BannerSection } from '@/components/app'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { LayoutProfileWrapper } from '@/modules/app'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -15,11 +15,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         items={[
           {
             title: 'Cambiar correo electrónico',
-            url: `${STUDENT_URLS_APP.ACCOUNT.URL_BASE}`,
+            url: `${APP_URL.ACCOUNT.URL_BASE}`,
           },
           {
             title: 'Cambiar Contraseña',
-            url: `${STUDENT_URLS_APP.ACCOUNT.CHANGE_PASSWORD}`,
+            url: `${APP_URL.ACCOUNT.CHANGE_PASSWORD}`,
           },
         ]}
       >

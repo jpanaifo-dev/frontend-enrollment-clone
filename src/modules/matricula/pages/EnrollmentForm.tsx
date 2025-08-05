@@ -45,7 +45,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { colors, days, hours } from './enrollment.utils'
 import { isValidDateString } from './utils'
 
@@ -255,7 +255,7 @@ export const EnrollmentForm = ({
         )
         // Redirigir o realizar otra acción
         router.push(
-          STUDENT_URLS_APP.MATRICULA.MATRICULAS_LIST.DETAIL(
+          APP_URL.MATRICULA.MATRICULAS_LIST.DETAIL(
             String(response?.data?.enrollment_id)
           )
         )

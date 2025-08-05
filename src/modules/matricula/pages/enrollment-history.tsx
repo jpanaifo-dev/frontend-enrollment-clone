@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { IEnrollmentList } from '@/types'
 import { FileText } from 'lucide-react'
 import Link from 'next/link'
@@ -66,7 +66,7 @@ export const HistorialTable = ({
                   </td>
                   <td className="px-6 py-4 text-center whitespace-nowrap text-sm">
                     <Link
-                      href={STUDENT_URLS_APP.MATRICULA.MATRICULAS_LIST.DETAIL(
+                      href={APP_URL.MATRICULA.MATRICULAS_LIST.DETAIL(
                         record.id.toString()
                       )}
                       className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"

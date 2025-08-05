@@ -9,7 +9,7 @@ import { ToastCustom } from '../app'
 import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import { Loader } from 'lucide-react'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 
 interface LoginAuthProps {
   path: 'student' | 'teacher'
@@ -34,8 +34,8 @@ export function LoginAuth({ path }: LoginAuthProps) {
       redirect: false,
       callbackUrl:
         path === 'student'
-          ? STUDENT_URLS_APP.HOME.URL_BASE
-          : STUDENT_URLS_APP.HOME.URL_BASE,
+          ? APP_URL.HOME.URL_BASE
+          : APP_URL.HOME.URL_BASE,
     })
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setLoading(false)
@@ -55,8 +55,8 @@ export function LoginAuth({ path }: LoginAuthProps) {
         )
         router.push(
           path === 'student'
-            ? STUDENT_URLS_APP.HOME.URL_BASE
-            : STUDENT_URLS_APP.HOME.URL_BASE
+            ? APP_URL.HOME.URL_BASE
+            : APP_URL.HOME.URL_BASE
         )
       }
     }

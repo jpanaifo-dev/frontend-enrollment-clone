@@ -4,7 +4,7 @@ import { ENDPOINTS_CONFIG } from '@/config/endpoints.config'
 import { PersonInfoSchemaType } from '@/modules'
 import { fetchPersonService } from '@/api/core'
 import { revalidatePath } from 'next/cache'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 
 const API_BASE = ENDPOINTS_CONFIG.PERSON
 
@@ -37,7 +37,7 @@ export const updatePerson = async (
 
     // Si el estado es exitoso, parseamos los datos
     const responseData: IPerson = await response.json()
-    revalidatePath(STUDENT_URLS_APP.PROFILE.URL_BASE)
+    revalidatePath(APP_URL.PROFILE.URL_BASE)
     return {
       status: response.status,
       data: responseData,
@@ -87,7 +87,7 @@ export const updatePersonPhoto = async ({
 
     // Si el estado es exitoso, parseamos los datos
     const responseData: IPerson = await response.json()
-    revalidatePath(STUDENT_URLS_APP.PROFILE.URL_BASE)
+    revalidatePath(APP_URL.PROFILE.URL_BASE)
     return {
       status: response.status,
       data: responseData,

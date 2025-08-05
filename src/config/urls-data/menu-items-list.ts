@@ -1,4 +1,4 @@
-import { STUDENT_URLS_APP } from './student.urls.config'
+import { APP_URL } from './student.urls.config'
 
 export const intranetMenu: {
   title: string
@@ -48,22 +48,22 @@ export const admisionMenu: {
 }[] = [
   {
     title: 'Inicio',
-    href: STUDENT_URLS_APP.HOME.URL_BASE,
+    href: APP_URL.HOME.URL_BASE,
   },
   {
     title: 'Mis matrículas',
-    href: STUDENT_URLS_APP.MATRICULA.MATRICULAS_LIST.URL_BASE,
+    href: APP_URL.MATRICULA.MATRICULAS_LIST.URL_BASE,
   },
   {
     title: 'Mis pagos',
-    href: STUDENT_URLS_APP.PAYMENTS.URL_BASE,
+    href: APP_URL.PAYMENTS.URL_BASE,
   },
   {
     title: 'Perfil',
-    href: STUDENT_URLS_APP.PROFILE.URL_BASE,
+    href: APP_URL.PROFILE.URL_BASE,
   },
   {
     title: 'Mi cuenta',
-    href: STUDENT_URLS_APP.ACCOUNT.URL_BASE,
+    href: APP_URL.ACCOUNT.URL_BASE,
   },
 ]

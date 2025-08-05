@@ -1,5 +1,5 @@
 import { BannerSection } from '@/components/app'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 
 export default async function Layout({
   children,
@@ -14,7 +14,7 @@ export default async function Layout({
         <BannerSection
           title={welcomeMessage}
           description={description}
-          urlBack={STUDENT_URLS_APP.HOME.URL_BASE}
+          urlBack={APP_URL.HOME.URL_BASE}
         />
         <main className="container mx-auto space-y-6 pt-20 sm:pt-16 pb-10 flex flex-col gap-5">
           {children}

@@ -30,7 +30,7 @@ import {
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import type { StudentData } from '@/types'
 import Link from 'next/link'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { ENDPOINTS_CONFIG } from '@/config/endpoints.config'
 import { useParams } from 'next/navigation'
 import { getUserServiceUrl } from '@/lib/get-url-base'
@@ -389,7 +389,7 @@ export const StudentDetailsComponent = ({ data }: StudentDetailsProps) => {
               variant="outline"
               asChild
             >
-              <Link href={STUDENT_URLS_APP.MATRICULA.LIST}>
+              <Link href={APP_URL.MATRICULA.LIST}>
                 <ArrowLeft className="w-4 h-4" />
               </Link>
             </Button>

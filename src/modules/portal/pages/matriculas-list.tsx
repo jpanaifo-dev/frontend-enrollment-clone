@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import { IEnrollmentStage } from '@/types'
 import Link from 'next/link'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { format, parseISO } from 'date-fns'
@@ -247,7 +247,7 @@ const MatriculaActionButton = ({
     return (
       <Link
         href={
-          STUDENT_URLS_APP.MATRICULA.START_ENROLLMENT.URL_BASE +
+          APP_URL.MATRICULA.START_ENROLLMENT.URL_BASE +
           '?matricula=' +
           matricula.id +
           '&student=' +
@@ -266,7 +266,7 @@ const MatriculaActionButton = ({
   if (matricula?.enrollment && matricula?.enrollment_id) {
     return (
       <Link
-        href={STUDENT_URLS_APP.MATRICULA.MATRICULAS_LIST.DETAIL(
+        href={APP_URL.MATRICULA.MATRICULAS_LIST.DETAIL(
           matricula?.enrollment_id.toString()
         )}
         className={`${baseClasses} ${

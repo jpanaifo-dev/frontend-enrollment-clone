@@ -1,5 +1,5 @@
 import { FileText, GraduationCap, HandCoins, History } from 'lucide-react'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { MatriculasListSection } from './matriculas-list'
@@ -109,7 +109,7 @@ export const AcademicPortal = (props: AcademicPortalProps) => {
               Accede a tu historial completo de matrículas y verifica su estado
               en tiempo real.
             </p>
-            <Link href={STUDENT_URLS_APP.MATRICULA.LIST}>
+            <Link href={APP_URL.MATRICULA.LIST}>
               <Button variant="outline">Ver Historial de Matrículas</Button>
             </Link>
           </div>
@@ -133,7 +133,7 @@ export const AcademicPortal = (props: AcademicPortalProps) => {
               Consulta todas tus transacciones y verifica el estado de tus pagos
               de manera fácil.
             </p>
-            <Link href={STUDENT_URLS_APP.PAYMENTS.URL_BASE}>
+            <Link href={APP_URL.PAYMENTS.URL_BASE}>
               <Button variant="outline">Ver Historial de Pagos</Button>
             </Link>
           </div>

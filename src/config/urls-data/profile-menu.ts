@@ -1,6 +1,6 @@
 'use client'
 import { handleLogout } from '@/modules/auth/utils/logout'
-import { STUDENT_URLS_APP } from './student.urls.config'
+import { APP_URL } from './student.urls.config'
 
 export interface MenuItem {
   label: string
@@ -19,7 +19,7 @@ export const MENU_PROFILE_STUDENT: MenuSection[] = [
     items: [
       {
         label: 'Perfil',
-        href: STUDENT_URLS_APP.PROFILE.URL_BASE,
+        href: APP_URL.PROFILE.URL_BASE,
       },
       // {
       //   label: 'Mi cuenta',
@@ -28,7 +28,7 @@ export const MENU_PROFILE_STUDENT: MenuSection[] = [
       {
         label: 'Cerrar sesión',
         onClick: () => {
-          handleLogout(STUDENT_URLS_APP.AUTH.LOGIN)
+          handleLogout(APP_URL.AUTH.LOGIN)
           localStorage.removeItem('loginMethod')
         },
       },

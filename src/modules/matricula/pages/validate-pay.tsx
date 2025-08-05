@@ -26,7 +26,7 @@ import { Steps } from './steps'
 import { IPaymentValidation } from '@/types'
 import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 const steps = [
@@ -83,7 +83,7 @@ export const PaymentValidateForm = ({
 
   const handleRedirectToGroupSelection = () => {
     if (paymentValidate) {
-      const url = `${STUDENT_URLS_APP.MATRICULA.START_ENROLLMENT.STEP_TWO(
+      const url = `${APP_URL.MATRICULA.START_ENROLLMENT.STEP_TWO(
         paymentValidate.uuid
       )}?matricula=${matricula_id}&person_uuid=${person_uuid}&student=${student_uuid}`
       router.push(url)
@@ -269,7 +269,7 @@ export const PaymentValidateForm = ({
                   </Button>
                   <div className="w-full p-3 text-center">
                     <Link
-                      href={STUDENT_URLS_APP.HOME.URL_BASE}
+                      href={APP_URL.HOME.URL_BASE}
                       className="text-primary-800 hover:underline w-full text-center text-sm"
                     >
                       Volver al inicio

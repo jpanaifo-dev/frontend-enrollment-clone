@@ -1,4 +1,4 @@
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { Facebook, Linkedin, Mail, Phone, Pin, Clock, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -51,7 +51,7 @@ export const Footer = () => {
           <ul className="text-sm space-y-2">
             <li>
               <Link
-                href={STUDENT_URLS_APP.MATRICULA.MATRICULAS_LIST.URL_BASE}
+                href={APP_URL.MATRICULA.MATRICULAS_LIST.URL_BASE}
                 className="hover:text-gray-300"
               >
                 Matrículas
@@ -59,7 +59,7 @@ export const Footer = () => {
             </li>
             <li>
               <Link
-                href={STUDENT_URLS_APP.PAYMENTS.URL_BASE}
+                href={APP_URL.PAYMENTS.URL_BASE}
                 className="hover:text-gray-300"
               >
                 Pagos

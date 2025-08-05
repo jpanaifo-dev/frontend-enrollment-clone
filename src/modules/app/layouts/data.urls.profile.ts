@@ -1,13 +1,13 @@
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 
 export const dataUrls = [
   {
     title: 'Información personal',
-    url: STUDENT_URLS_APP.PROFILE.URL_BASE,
+    url: APP_URL.PROFILE.URL_BASE,
   },
   {
     title: 'Información de contacto',
-    url: STUDENT_URLS_APP.PROFILE.PERSONAL_INFO,
+    url: APP_URL.PROFILE.PERSONAL_INFO,
   },
   // {
   //   title: 'Información académica',

@@ -1,6 +1,6 @@
 const URL_BASE = '/dashboard'
 
-export const STUDENT_URLS_APP = {
+export const APP_URL = {
   HOME: {
     URL_BASE: `${URL_BASE}`,
     REGISTER: `/sign-up`,

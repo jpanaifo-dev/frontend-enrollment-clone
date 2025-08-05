@@ -5,7 +5,7 @@ import { MobileMenu } from './menu-items-mobile'
 import { LogoRender } from '../miscellaneous'
 import { ProfilePopover } from '../miscellaneous/profile-popover'
 import Link from 'next/link'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { MENU_PROFILE } from '@/config/urls-data/profile-menu'
 
 export const NavbarUser = ({
@@ -19,8 +19,8 @@ export const NavbarUser = ({
         <LogoRender
           href={
             !person
-              ? STUDENT_URLS_APP.HOME.LANDING
-              : STUDENT_URLS_APP.HOME.URL_BASE
+              ? APP_URL.HOME.LANDING
+              : APP_URL.HOME.URL_BASE
           }
           className="w-full max-w-[160px]"
         />
@@ -46,7 +46,7 @@ export const NavbarUser = ({
           {/* {!person && <AuthDialog variant="nav" />} */}
           {!person && (
             <Link
-              href={STUDENT_URLS_APP.AUTH.LOGIN}
+              href={APP_URL.AUTH.LOGIN}
               className="text-white truncate hover:text-gray-300 text-sm"
               // className="text-white bg-blue-800 hover:bg-blue-700 px-4 py-2 rounded-md"
             >

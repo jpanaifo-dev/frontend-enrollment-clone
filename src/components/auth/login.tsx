@@ -14,7 +14,7 @@ import { fetchLogin } from '@/api/auth'
 import { ToastCustom } from '../app'
 import { toast } from 'react-toastify'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
 
 export const Login = (props: LoginProps) => {
   const { subTitle, path } = props
@@ -51,9 +51,9 @@ export const Login = (props: LoginProps) => {
         />
       )
       if (path === 'student') {
-        router.push(redirectUrl || STUDENT_URLS_APP.HOME.URL_BASE)
+        router.push(redirectUrl || APP_URL.HOME.URL_BASE)
       } else {
-        router.push(redirectUrl || STUDENT_URLS_APP.HOME.URL_BASE)
+        router.push(redirectUrl || APP_URL.HOME.URL_BASE)
       }
     } else {
       setErrorsList(response.errors || ['Error desconocido.'])
@@ -199,7 +199,7 @@ export const Login = (props: LoginProps) => {
         </SessionProvider> */}
         <Button
           type="button"
-          onClick={() => router.push(STUDENT_URLS_APP.HOME.LANDING)}
+          onClick={() => router.push(APP_URL.HOME.LANDING)}
           variant="link"
         >
           Regresar al inicio

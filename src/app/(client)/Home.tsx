@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { STUDENT_URLS_APP } from '@/config/urls-data/student.urls.config';
+import { APP_URL } from '@/config/urls-data/student.urls.config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Info } from 'lucide-react';
@@ -56,7 +56,7 @@ export default function Home() {
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-md"
               asChild
             >
-              <Link href={STUDENT_URLS_APP.AUTH.LOGIN}>Empezar matrícula</Link>
+              <Link href={APP_URL.AUTH.LOGIN}>Empezar matrícula</Link>
             </Button>
           </div>
         </div>
