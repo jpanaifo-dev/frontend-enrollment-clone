@@ -89,7 +89,6 @@ export const Login = (props: LoginProps) => {
           <p className="text-sm text-muted-foreground">
             No tienes una cuenta?{' '}
             <Link
-              // href={AUTH_URLS_APP.CREATE_ACCOUNT.URL_BASE}
               href={'#'}
               className="text-blue-600 hover:underline"
             >
