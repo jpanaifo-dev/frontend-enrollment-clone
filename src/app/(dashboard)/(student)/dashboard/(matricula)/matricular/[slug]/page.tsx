@@ -31,14 +31,12 @@ export default async function Page(props: IProps) {
   })
 
   return (
-    <>
-      <EnrollmentForm
-        studentInfo={studentData?.data || undefined}
-        studentUuid={student_uuid?.toString() || undefined}
-        enrollmentStage={response.data || undefined}
-        coursesData={responseGrupos.data || []}
-        paymentUuid={payment_uuid?.toString() || undefined}
-      />
-    </>
+    <EnrollmentForm
+      studentInfo={studentData?.data || undefined}
+      studentUuid={student_uuid?.toString() || undefined}
+      enrollmentStage={response.data || undefined}
+      coursesData={responseGrupos.data || []}
+      paymentUuid={payment_uuid?.toString() || undefined}
+    />
   )
 }
