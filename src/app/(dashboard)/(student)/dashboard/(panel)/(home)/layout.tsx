@@ -27,17 +27,15 @@ export default async function Layout({
 Revisa tus datos, selecciona tus cursos y completa tu inscripción en pocos pasos.`
 
   return (
-    <>
-      <div className="min-h-screen bg-slate-100">
-        <BannerSection
-          title={welcomeMessage}
-          description={description}
-          backgroundImage="/images/bg-matricula.webp"
-        />
-        <main className="container mx-auto space-y-6 pt-20 sm:pt-16 pb-10">
-          {children}
-        </main>
-      </div>
-    </>
+    <div className="min-h-screen bg-slate-100">
+      <BannerSection
+        title={welcomeMessage}
+        description={description}
+        backgroundImage="/images/bg-matricula.webp"
+      />
+      <main className="container mx-auto space-y-6 pt-20 sm:pt-16 pb-10">
+        {children}
+      </main>
+    </div>
   )
 }
