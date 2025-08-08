@@ -20,10 +20,11 @@ export const fetchEnrrollmentStageList = async ({
   data?: IEnrollmentStage[] | null
   errors?: string[]
 }> => {
-  const url = `${API_BASE.ENROLLMENT_STAGE_PERSON}?person_token=${person_uuid}`
+  const url = `${API_BASE.ENROLLMENT_STAGE_PERSON}?person_id=${person_uuid}`
 
   try {
     const response = await fetchAcademicService.get(url)
+    console.log(response)
     if (!response.ok) {
       const errorResponse: {
         [key: string]: string[]
@@ -232,7 +233,7 @@ export const fetchStudentEnrollmentList = async ({
 
   try {
     const response = await fetchAcademicService.get(url)
-  
+
     if (!response.ok) {
       const errorResponse: {
         [key: string]: string[]

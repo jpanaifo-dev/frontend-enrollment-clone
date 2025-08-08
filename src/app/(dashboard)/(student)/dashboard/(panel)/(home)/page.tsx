@@ -14,10 +14,10 @@ export default async function Page() {
 
   const [response, programsRes] = await Promise.all([
     fetchEnrrollmentStageList({
-      person_uuid: dataUser?.person_token || '',
+      person_uuid: dataUser?.person.id.toString() || '',
     }),
     fetchProgramsStudent({
-      person_uuid: dataUser?.person_token || '',
+      person_uuid: dataUser?.person.id.toString() || '',
     }),
   ])
 
