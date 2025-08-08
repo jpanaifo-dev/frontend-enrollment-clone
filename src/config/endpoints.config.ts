@@ -81,7 +81,7 @@ export const ENDPOINTS_CONFIG = {
   },
   ACADEMIC: {
     ENROLLMENT: `${BASE_PATHS.ACADEMIC}enrollment/`,
-    ENROLLMENT_STAGE: `${BASE_PATHS.ACADEMIC}enrollmentstage/`,
+    ENROLLMENT_STAGE: `${BASE_PATHS.ACADEMIC}enrollment-stages/course-group-enrollment-list`,
     ENROLLMENT_STAGE_PERSON: `${BASE_PATHS.ACADEMIC}enrollment-stages/active-enrollment-stage/`,
     ENROLLMENT_VALIDATE: `${BASE_PATHS.ACADEMIC}enrollment/validate-enrollment/`,
     COURSE_GROUP: `${BASE_PATHS.ACADEMIC}coursegroup/course-group-enrollment-list/`,

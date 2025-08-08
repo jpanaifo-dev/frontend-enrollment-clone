@@ -104,7 +104,7 @@ export const fetchEnrollmentStageBy = async ({
   data?: IEnrollmentStage | null
   errors?: string[]
 }> => {
-  const url = `${API_BASE.ENROLLMENT_STAGE}${stage_uuid}/`
+  const url = `${API_BASE.ENROLLMENT_STAGE}?enrollment_stage_id=${stage_uuid}/`
 
   try {
     const response = await fetchAcademicService.get(url)
