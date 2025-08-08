@@ -64,7 +64,7 @@ export const fetchProgramsStudent = async ({
   data?: IStudentProgram[] | null
   errors?: string[]
 }> => {
-  const url = `${API_BASE.STUDENT_FILE_PROGRAMS}?person_token=${person_uuid}`
+  const url = `${API_BASE.STUDENT_FILE_PROGRAMS}?person_id=${person_uuid}`
 
   try {
     const response = await fetchAcademicService.get(url)

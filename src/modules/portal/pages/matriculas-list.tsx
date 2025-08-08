@@ -18,14 +18,6 @@ interface MatriculasListSectionProps {
 export const MatriculasListSection = (props: MatriculasListSectionProps) => {
   const { enrollmentsList } = props
 
-  // Calculamos el número de columnas según la cantidad de elementos
-  const gridColumns =
-    enrollmentsList.length >= 3
-      ? 'lg:grid-cols-3'
-      : enrollmentsList.length === 2
-      ? 'lg:grid-cols-2'
-      : 'lg:grid-cols-1'
-
   // Función helper para formatear fechas
   const formatDate = (dateString: string) => {
     if (!dateString) return 'Fecha no disponible'
@@ -33,7 +25,7 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
       return format(parseISO(dateString), 'dd/MM/yyyy', { locale: es })
     } catch (error) {
       console.error('Error formateando fecha:', error)
-      return dateString // Devuelve el string original si hay error
+      return dateString
     }
   }
 
@@ -42,17 +34,9 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
   ): 'regular' | 'extemporanea' | null => {
     const now = new Date()
     const startRegular = matricula.start_date
-      ? parseISO(formatDate(matricula.start_date))
+      ? parseISO(matricula.start_date)
       : null
-    const endRegular = matricula.end_date
-      ? parseISO(formatDate(matricula.end_date))
-      : null
-    const startExt = matricula.untimely_start_date
-      ? parseISO(formatDate(matricula.untimely_start_date))
-      : null
-    const endExt = matricula.untimely_end_date
-      ? parseISO(formatDate(matricula.untimely_end_date))
-      : null
+    const endRegular = matricula.end_date ? parseISO(matricula.end_date) : null
 
     if (
       startRegular &&
@@ -62,71 +46,52 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
     ) {
       return 'regular'
     }
-    if (startExt && endExt && now >= startExt && now <= endExt) {
-      return 'extemporanea'
-    }
     return null
   }
 
   return (
     <div className="w-full">
-      {/* Grid responsive para todas las pantallas */}
-      <div className={`grid grid-cols-1 sm:grid-cols-2 ${gridColumns} gap-6`}>
+      <div className={`grid grid-cols-1 gap-6`}>
         {enrollmentsList.map((matricula, index) => (
           <Card
             key={index}
             className={cn(
-              'shadow-sm border flex flex-col md:flex-row gap-0 overflow-hidden group rounded-md' // Added responsive flex and rounded-md
-              // {
-              //   'bg-gradient-to-br from-blue-700 to-blue-900 text-white':
-              //     !matricula?.enrollment,
-              // }
+              'shadow-sm border flex flex-col md:flex-row gap-0 overflow-hidden group rounded-md pt-0 pb-0'
             )}
           >
             {/* Imagen de cabecera */}
             <div
               className={cn(
                 'relative h-32 w-full overflow-hidden',
-                'md:w-56 md:h-auto md:flex-shrink-0', // Fixed width for image on md and up, prevent shrinking
-                'rounded-t-md md:rounded-l-md md:rounded-tr-none' // Rounded corners for image
-                // !matricula?.enrollment ? 'bg-blue-800' : 'bg-gray-100' // Adjust background for image based on card state
+                'md:w-72 md:h-auto md:flex-shrink-0 lg:w-96',
+                'rounded-t-md md:rounded-l-md md:rounded-tr-none',
+                matricula?.enrollment ? 'bg-gray-100' : 'bg-blue-800'
               )}
             >
               <Image
-                src="/images/bg-matricula.webp" // Ruta a tu imagen por defecto
+                src="/images/bg-matricula.webp"
                 alt="Matrícula universitaria"
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-300 h-full"
+                width={600}
+                height={200}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
+
             {/* Contenido del Card */}
             <div className="flex flex-col flex-grow p-4 md:p-6">
               <CardHeader className="pb-0 pt-0 px-0">
-                <CardTitle
-                  className={cn(
-                    'text-lg font-extrabold flex justify-between',
-                    matricula?.enrollment ? 'text-gray-700' : 'text-white'
-                  )}
-                >
+                <CardTitle>
                   <div className="flex flex-col gap-2">
                     <Badge
                       className={cn(
                         'rounded-full font-medium border w-fit',
-                        matricula?.enrollment
-                          ? 'bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-400'
-                          : 'bg-white/20 text-white border-white/30 hover:bg-white/30'
+                        'bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-400'
                       )}
                     >
                       Período: {matricula?.period_name}
                     </Badge>
-                    <p
-                      className={cn(
-                        'line-clamp-2',
-                        matricula?.enrollment
-                          ? 'text-gray-600'
-                          : 'text-white/80'
-                      )}
-                    >
+                    <p className={cn('line-clamp-2', 'text-gray-600')}>
                       {matricula.description}
                     </p>
                   </div>
@@ -136,26 +101,15 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
                         Matrícula Regular
                       </Badge>
                     )}
-                    {getMatriculaStatus(matricula) === 'extemporanea' && (
-                      <Badge className="rounded-full text-xs bg-yellow-100 text-yellow-800 border-yellow-200">
-                        Matrícula Extemporánea
-                      </Badge>
-                    )}
                   </div>
                 </CardTitle>
               </CardHeader>
+
               <CardContent className="flex flex-col gap-4 py-4 px-0">
                 <div className="flex flex-col gap-2">
                   <div className="flex items-start gap-2">
                     <div>
-                      <p
-                        className={cn(
-                          'text-sm mb-1',
-                          matricula?.enrollment
-                            ? 'text-muted-foreground'
-                            : 'text-white/70'
-                        )}
-                      >
+                      <p className={cn('text-sm mb-1')}>
                         {matricula?.enrollment
                           ? 'Tienes una matrícula completada en:'
                           : 'Tienes una matrícula pendiente en:'}
@@ -165,9 +119,7 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
                           variant="outline"
                           className={cn(
                             'rounded-full text-xs',
-                            matricula?.enrollment
-                              ? 'bg-gray-100 text-gray-600 border-gray-200'
-                              : 'bg-white/20 text-white border-white/40'
+                            'bg-gray-100 text-gray-600 border-gray-200'
                           )}
                         >
                           {matricula.program_code}
@@ -175,27 +127,19 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
                         <h3
                           className={cn(
                             'text-sm font-semibold uppercase line-clamp-1',
-                            matricula?.enrollment
-                              ? 'text-gray-700'
-                              : 'text-white'
+                            'text-gray-500'
                           )}
                         >
-                          {matricula.program_type}: {matricula.program_name}
+                          {matricula.program_name}
                         </h3>
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div className="space-y-2 rounded-lg bg-white/5 p-3 border border-white/10">
                   <div className="text-sm">
-                    <p
-                      className={cn(
-                        'font-medium mb-1',
-                        matricula?.enrollment
-                          ? 'text-gray-600'
-                          : 'text-white/80'
-                      )}
-                    >
+                    <p className={cn('font-medium mb-1', 'text-gray-600')}>
                       Fechas para matrícula:
                     </p>
                     <div className="pl-2 space-y-1">
@@ -203,49 +147,20 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
                         <span
                           className={cn(
                             'font-semibold min-w-[70px]',
-                            matricula?.enrollment
-                              ? 'text-gray-700'
-                              : 'text-white'
+                            'text-gray-700'
                           )}
                         >
                           Regular:
                         </span>{' '}
-                        <span
-                          className={
-                            matricula?.enrollment
-                              ? 'text-gray-600'
-                              : 'text-white/70'
-                          }
-                        >
+                        <span className={'text-gray-600'}>
                           {formatDate(matricula.start_date)} -{' '}
                           {formatDate(matricula.end_date)}
-                        </span>
-                      </p>
-                      <p className="flex items-start">
-                        <span
-                          className={cn(
-                            'font-semibold min-w-[70px]',
-                            matricula?.enrollment
-                              ? 'text-gray-700'
-                              : 'text-white'
-                          )}
-                        >
-                          Extemporánea:
-                        </span>{' '}
-                        <span
-                          className={
-                            matricula?.enrollment
-                              ? 'text-gray-600'
-                              : 'text-white/70'
-                          }
-                        >
-                          {formatDate(matricula.untimely_start_date)} -{' '}
-                          {formatDate(matricula.untimely_end_date)}
                         </span>
                       </p>
                     </div>
                   </div>
                 </div>
+
                 <div className="mt-2">
                   <MatriculaActionButton
                     matricula={matricula}
@@ -281,7 +196,7 @@ const MatriculaActionButton = ({
           '?matricula=' +
           matricula.id +
           '&student=' +
-          matricula.student_uuid
+          matricula.student_id
         }
         className={`${baseClasses} ${
           fullWidth ? 'w-full' : ''
@@ -297,7 +212,7 @@ const MatriculaActionButton = ({
     return (
       <Link
         href={APP_URL.MATRICULA.MATRICULAS_LIST.DETAIL(
-          matricula?.enrollment_id.toString()
+          matricula.enrollment_id.toString()
         )}
         className={`${baseClasses} ${
           fullWidth ? 'w-full' : ''

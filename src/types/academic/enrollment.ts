@@ -3,33 +3,22 @@ export interface IEnrollmentStage {
   description: string
   start_date: string
   end_date: string
-  untimely_start_date: string
-  untimely_end_date: string
   is_active: boolean
-  program_type: string
-  program_uuid: string
+  program_id: number
   program_code: string
   program_name: string
-  study_plan_uuid: string
-  study_plan_description: string
-  period_uuid: string
   period_name: string
-  student_uuid: string
+  student_id: number
   enrollment: boolean
   enrollment_id?: number | null
 }
 
 export interface IStudentProgram {
   id: number
-  uuid: string
   program_code: string
   program_name: string
-  program_type: string
-  unity_name: string
-  modality_name: string
-  state: string
-  program_credits: number
-  student_file_credits: number
+  program_description: string
+  is_active: boolean
 }
 
 export interface IStudentDetails {

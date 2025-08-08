@@ -1,6 +1,4 @@
-import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
 import { IStudentProgram } from '@/types'
 import { GraduationCap, Building2, BookOpen } from 'lucide-react'
 
@@ -10,19 +8,6 @@ interface IProps {
 
 export const ProgramsList = (props: IProps) => {
   const { programsList } = props
-  const getProgramTypeColor = (type: string) => {
-    const colors = {
-      pregrado: 'bg-blue-50 text-blue-700 border-blue-200',
-      posgrado: 'bg-purple-50 text-purple-700 border-purple-200',
-      maestría: 'bg-indigo-50 text-indigo-700 border-indigo-200',
-      doctorado: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-      especialización: 'bg-orange-50 text-orange-700 border-orange-200',
-    }
-    return (
-      colors[type.toLowerCase() as keyof typeof colors] ||
-      'bg-gray-50 text-gray-700 border-gray-200'
-    )
-  }
 
   if (!programsList || programsList.length === 0) {
     return (
@@ -66,33 +51,11 @@ export const ProgramsList = (props: IProps) => {
                     </div>
                   </div>
 
-                  {/* Badges */}
-                  <div className="flex flex-wrap gap-2">
-                    <Badge
-                      variant="outline"
-                      className={`${getProgramTypeColor(
-                        programa.program_type
-                      )} font-medium rounded-full`}
-                    >
-                      {programa.program_type}
-                    </Badge>
-                    <Badge
-                      className={cn(
-                        'flex items-center gap-1 rounded-full',
-                        programa.state === 'Activo'
-                          ? 'bg-green-50 text-green-700 border-green-200'
-                          : 'bg-red-50 text-red-700 border-red-200'
-                      )}
-                    >
-                      {programa.state}
-                    </Badge>
-                  </div>
-
                   {/* Facultad */}
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Building2 className="w-4 h-4" />
                     <span className="font-medium">Facultad:</span>
-                    <span>{programa.unity_name}</span>
+                    <span>{programa.program_description}</span>
                   </div>
                 </div>
               </div>

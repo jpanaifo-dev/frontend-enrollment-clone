@@ -88,7 +88,7 @@ export const ENDPOINTS_CONFIG = {
     ENROLLMENT_CREATE: `${BASE_PATHS.ACADEMIC}enrollment/create-enrollment/`,
     DETAILS_STUDENT_FILE: `${BASE_PATHS.ACADEMIC}studentfile/student-file-details/`,
     DETAILS_ENROLLMENT: `${BASE_PATHS.ACADEMIC}enrollment/enrollment-details/`,
-    STUDENT_FILE_PROGRAMS: `${BASE_PATHS.ACADEMIC}studentfile/student-programs/`,
+    STUDENT_FILE_PROGRAMS: `${BASE_PATHS.ACADEMIC}students/student-programs/`,
     ENROLLMENT_LIST: `${BASE_PATHS.ACADEMIC}enrollment/enrollment-list/`,
   },
   PROGRAM: {
