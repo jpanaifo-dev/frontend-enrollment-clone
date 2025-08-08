@@ -45,13 +45,13 @@ export default function BannerSection({
     <div className="relative bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 pt-16 md:pt-20 lg:pt-28 min-h-[320px] sm:min-h-[260px] flex items-center flex-col gap-3">
       {/* Imagen de fondo */}
       {backgroundImage && (
-        <section className="absolute inset-0 -z-0">
+        <section className="absolute inset-0 -z-0 overflow-hidden">
           <Image
             src={backgroundImage}
             alt="background-image"
-            fill
             className="object-cover object-center"
             priority
+            fill
           />
         </section>
       )}

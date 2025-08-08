@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'diariolaregion.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'http://192.168.16.182:8000/',
+      },
     ],
   },
   env: {

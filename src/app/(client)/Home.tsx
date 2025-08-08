@@ -1,16 +1,21 @@
-import { Button } from '@/components/ui/button';
-import { APP_URL } from '@/config/urls-data/student.urls.config';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Info } from 'lucide-react';
+import { Button } from '@/components/ui/button'
+import { APP_URL } from '@/config/urls-data/student.urls.config'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Info } from 'lucide-react'
 
-import SectionWrapper from '@/components/app/SectionWrapper';
-import ProcessCard from '@/components/app/ProcessCard';
-import PaymentCard from '@/components/app/PaymentCard';
-import RecommendationCard from '@/components/app/RecommendationCard';
-import DocumentCard from '@/components/app/DocumentCard';
-import PaymentMethod from '@/components/app/PaymentMethod';
-import { DOCUMENT_URLS, PROCESS_DATES, PAYMENT_INFO, RECOMMENDATIONS } from './home.constants';
+import SectionWrapper from '@/components/app/SectionWrapper'
+import ProcessCard from '@/components/app/ProcessCard'
+import PaymentCard from '@/components/app/PaymentCard'
+import RecommendationCard from '@/components/app/RecommendationCard'
+import DocumentCard from '@/components/app/DocumentCard'
+import PaymentMethod from '@/components/app/PaymentMethod'
+import {
+  DOCUMENT_URLS,
+  PROCESS_DATES,
+  PAYMENT_INFO,
+  RECOMMENDATIONS,
+} from './home.constants'
 
 export default function Home() {
   return (
@@ -21,8 +26,9 @@ export default function Home() {
           <Image
             src="/images/background-landing.webp"
             alt="University campus with students"
-            fill
             className="object-cover"
+            width={1920}
+            height={1080}
             priority
           />
           <div className="absolute inset-0 bg-slate-900/70"></div>
@@ -119,7 +125,11 @@ export default function Home() {
               />
             </div>
             <div className="flex space-x-1.5 text-gray-500">
-              <Info size={34} width={44} height={18} />
+              <Info
+                size={34}
+                width={44}
+                height={18}
+              />
               <p className="text-xs max-w-xs leading-relaxed">
                 Una vez realizado el pago, deberás esperar 24 horas para que se
                 active. No intentes matricularte inmediatamente después de
@@ -187,5 +197,5 @@ export default function Home() {
         </div>
       </SectionWrapper>
     </div>
-  );
+  )
 }
