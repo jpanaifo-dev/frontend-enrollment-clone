@@ -7,6 +7,7 @@ import {
   IStudentProgram,
   StudentData,
   IEnrollmentList,
+  IStudentFilters,
 } from '@/types'
 
 const API_BASE = ENDPOINTS_CONFIG.ACADEMIC
@@ -135,15 +136,23 @@ export const fetchEnrollmentStageBy = async ({
 }
 
 export const fetchDetailsStudentFile = async ({
-  student_file_uuid,
-}: {
-  student_file_uuid: string
-}): Promise<{
+  id,
+}: IStudentFilters): Promise<{
   status: number
   data?: IStudentDetails | null
   errors?: string[]
 }> => {
-  const url = `${API_BASE.DETAILS_STUDENT_FILE}?student_token=${student_file_uuid}`
+  const params = new URLSearchParams()
+
+  if (typeof id === 'object' && id !== null) {
+    Object.entries(id).forEach(([key, value]) => {
+      if (value !== undefined) {
+        params.append(key, String(value))
+      }
+    })
+  }
+
+  const url = `${API_BASE.DETAILS_STUDENT_FILE}?${params.toString()}`
 
   try {
     const response = await fetchAcademicService.get(url)

@@ -36,7 +36,7 @@ export default async function Page(props: IProps) {
     /* Obtenemos la informacion del estudiante */
   }
   const studentData = await fetchDetailsStudentFile({
-    student_file_uuid: String(student_uuid),
+    id: Number(student_uuid),
   })
 
   return (

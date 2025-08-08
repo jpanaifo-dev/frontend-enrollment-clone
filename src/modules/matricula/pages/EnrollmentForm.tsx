@@ -638,15 +638,15 @@ export const EnrollmentForm = ({
               <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                 <div>
                   <p className="text-gray-500">Alumno</p>
-                  <p className="font-medium">{studentInfo?.person_name}</p>
+                  <p className="font-medium">{`${studentInfo?.person?.last_name1} ${studentInfo?.person?.last_name2} (${studentInfo?.person?.names})`}</p>
                 </div>
                 <div>
                   <p className="text-gray-500">Código de alumno</p>
-                  <p className="font-medium">{studentInfo?.university_code}</p>
+                  <p className="font-medium">{studentInfo?.code}</p>
                 </div>
                 <div>
                   <p className="text-gray-500">Programa</p>
-                  <p className="font-medium">{studentInfo?.program_name}</p>
+                  <p className="font-medium">{studentInfo?.program?.name}</p>
                 </div>
                 <div>
                   <p className="text-gray-500">Fecha de matrícula</p>

@@ -1,3 +1,5 @@
+import { IPerson } from '../person'
+
 export interface IEnrollmentStage {
   id: number
   description: string
@@ -24,13 +26,17 @@ export interface IStudentProgram {
 
 export interface IStudentDetails {
   id: number
-  university_code: string
-  plan_study_description: string
-  program_code: string
-  program_name: string
-  unity_name: string
-  person_name: string
-  modality_name: string
+  code: string
+  is_active: boolean
+  person: IPerson | null
+  program: {
+    id: number
+    name: string
+    code: string
+    description: string
+    background: string
+    is_active: boolean
+  } | null
 }
 
 export interface IEnrollmentList {
@@ -41,4 +47,13 @@ export interface IEnrollmentList {
   program: string
   courses: number
   credits: number
+}
+
+export interface IStudentFilters {
+  id?: number
+  person?: string
+  program?: string
+  is_active?: boolean | string
+  person__document_number?: string
+  person__document_number__icontains?: string
 }
