@@ -2,6 +2,7 @@ import { APP_URL } from '@/config/urls-data/student.urls.config'
 import { Facebook, Linkedin, Mail, Phone, Pin, Clock, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LogoRender } from './logo-render'
 
 export const Footer = () => {
   return (
@@ -9,18 +10,7 @@ export const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-4 gap-8 py-6">
         {/* Sección de la institución */}
         <div>
-          <Link
-            href={'/'}
-            // href={ADMISSION_URLS_APP.HOME.LANDING}
-            className="flex items-center space-x-2"
-            legacyBehavior>
-            <Image
-              src="/brands/postgrado_brandwhite.webp"
-              alt="EPG-UNAP Logo"
-              width={180}
-              height={20}
-            />
-          </Link>
+          <LogoRender href={APP_URL.HOME.URL_BASE} />
           <p className="text-sm text-gray-400 mt-2">
             Formación académica de excelencia para el desarrollo profesional y
             la investigación.
@@ -81,19 +71,28 @@ export const Footer = () => {
               <span>postgrado@unapiquitos.edu.pe</span>
             </li>
             <li className="flex items-center space-x-2">
-              <Link href="https://www.facebook.com/postgradounap/" legacyBehavior>
+              <Link
+                href="https://www.facebook.com/postgradounap/"
+                legacyBehavior
+              >
                 <Facebook
                   size={16}
                   className="hover:text-gray-300"
                 />
               </Link>
-              <Link href="https://www.linkedin.com/company/posgradounap" legacyBehavior>
+              <Link
+                href="https://www.linkedin.com/company/posgradounap"
+                legacyBehavior
+              >
                 <Linkedin
                   size={16}
                   className="hover:text-gray-300"
                 />
               </Link>
-              <Link href="https://twitter.com/postgradounap" legacyBehavior>
+              <Link
+                href="https://twitter.com/postgradounap"
+                legacyBehavior
+              >
                 <X
                   size={16}
                   className="hover:text-gray-300"
@@ -128,5 +127,5 @@ export const Footer = () => {
         </Link>
       </div>
     </footer>
-  );
+  )
 }
