@@ -32,16 +32,6 @@ export const Steps = ({ steps, currentStep, className }: StepsProps) => {
               >
                 {/* Contenedor del paso */}
                 <div className="flex flex-col items-center relative z-10 w-full px-2">
-                  {/* Línea de conexión - solo si no es el último paso */}
-                  {!isLastStep && (
-                    <div
-                      className={cn(
-                        'absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-px',
-                        isCompleted ? 'bg-blue-600' : 'bg-gray-200'
-                      )}
-                    />
-                  )}
-
                   {/* Círculo */}
                   <div
                     className={cn(

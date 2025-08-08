@@ -13,9 +13,7 @@ function formatDate(dateString: string): string {
 
 function getEnrollmentType(
   startDate: string,
-  endDate: string,
-  untimelyStart: string,
-  untimelyEnd: string
+  endDate: string
 ): {
   status: 'regular' | 'untimely'
   message: string
@@ -23,13 +21,9 @@ function getEnrollmentType(
   const now = new Date()
   const start = new Date(startDate)
   const end = new Date(endDate)
-  const untimelyStartDate = new Date(untimelyStart)
-  const untimelyEndDate = new Date(untimelyEnd)
 
   if (now >= start && now <= end) {
     return { status: 'regular', message: 'Matrícula Regular' }
-  } else if (now >= untimelyStartDate && now <= untimelyEndDate) {
-    return { status: 'untimely', message: 'Matrícula Extemporánea' }
   } else {
     return { status: 'regular', message: 'Matrícula Regular' }
   }
@@ -43,9 +37,7 @@ export const EnrollmentData = (props: EnrollmentDataProps) => {
   const { enrollmentData } = props
   const { status, message } = getEnrollmentType(
     enrollmentData?.start_date ?? '',
-    enrollmentData?.end_date ?? '',
-    enrollmentData?.untimely_start_date ?? '',
-    enrollmentData?.untimely_end_date ?? ''
+    enrollmentData?.end_date ?? ''
   )
 
   const getStatusVariant = (status: string) => {
@@ -88,21 +80,19 @@ export const EnrollmentData = (props: EnrollmentDataProps) => {
       <div className="flex flex-col gap-6 sm:flex-row md:gap-8">
         <div className="space-y-1">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Período Regular
+            Matricula disponible desde
           </div>
           <div className="text-sm font-medium">
-            {formatDate(enrollmentData?.start_date ?? '')} -{' '}
-            {formatDate(enrollmentData?.end_date ?? '')}
+            {formatDate(enrollmentData?.start_date ?? '')}
           </div>
         </div>
-
         <div className="space-y-1">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Período Extemporáneo
+            Matricula disponible hasta
           </div>
+
           <div className="text-sm font-medium">
-            {formatDate(enrollmentData?.untimely_start_date ?? '')} -{' '}
-            {formatDate(enrollmentData?.untimely_end_date ?? '')}
+            {formatDate(enrollmentData?.end_date ?? '')}
           </div>
         </div>
       </div>

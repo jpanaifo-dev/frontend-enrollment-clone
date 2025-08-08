@@ -18,14 +18,23 @@ export default async function Page(props: IProps) {
   const student_uuid = searchParams.student
   const payment_uuid = params.slug
 
+  {
+    /* Obtenemos los grupos de matricula */
+  }
   const responseGrupos = await fetchGroupsEnrrollmentStageList({
     enrollment_stage_id: String(matricula_id),
   })
 
+  {
+    /* Obtenemos la etapa de matricula */
+  }
   const response = await fetchEnrollmentStageBy({
     stage_uuid: matricula_id?.toString() || '',
   })
 
+  {
+    /* Obtenemos la informacion del estudiante */
+  }
   const studentData = await fetchDetailsStudentFile({
     student_file_uuid: String(student_uuid),
   })
