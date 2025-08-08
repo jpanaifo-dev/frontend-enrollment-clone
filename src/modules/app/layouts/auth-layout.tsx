@@ -11,6 +11,7 @@ interface AuthLayoutProps {
   logoSize?: number
   homeUrl?: string
   systemName?: string
+  hiddenName?: boolean
 }
 
 export function AuthLayout({
@@ -23,6 +24,7 @@ export function AuthLayout({
   logoSize = 35,
   homeUrl = '#',
   systemName = 'SIGAE - UNAP',
+  hiddenName,
 }: AuthLayoutProps) {
   // Validar que la opacidad esté entre 0 y 1
   const safeGradientOpacity = Math.min(1, Math.max(0, gradientOpacity))
@@ -85,13 +87,15 @@ export function AuthLayout({
                 minHeight: `${logoSize}px`,
               }}
             />
-            <span className="text-xl font-semibold">{systemName}</span>
+            {!hiddenName && (
+              <span className="text-xl font-semibold">{systemName}</span>
+            )}
           </div>
         </Link>
 
         {/* Content */}
         <div className="mt-32 text-white max-w-xl z-10">
-          <h1 className="text-4xl font-bold mb-4">Matrícula</h1>
+          <h1 className="text-4xl font-extrabold mb-4">Matrícula</h1>
           {subTitle ? (
             <p className="text-lg opacity-90">{subTitle}</p>
           ) : (

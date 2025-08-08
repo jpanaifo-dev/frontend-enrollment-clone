@@ -68,11 +68,12 @@ export const Login = (props: LoginProps) => {
 
   return (
     <AuthLayout
-      gradientOpacity={0.5}
+      gradientOpacity={0.8}
       backgroundImage="/images/bg-matricula.webp"
+      hiddenName
       subTitle={subTitleText}
-      systemName="¡MATRÍCULATE YA!"
-      logoUrl="/brands/isologo_ims.png"
+      logoSize={200}
+      logoUrl="/brands/isologo_ims_white.png"
     >
       <div className="text-center lg:text-left">
         <div className="flex items-center justify-center mb-4 md:hidden">

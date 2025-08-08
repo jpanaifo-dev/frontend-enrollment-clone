@@ -6,9 +6,9 @@ import { Providers } from './providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Matrícula de Postgrado | UNAP',
+  title: 'Matrícula de Postgrado | IMS',
   description:
-    'Realiza tu matrícula en la Escuela de Postgrado de la Universidad Nacional de la Amazonía Peruana. Gestiona tu inscripción de manera fácil y rápida para acceder a nuestros programas académicos de excelencia.',
+    'Realiza tu matrícula en el Instituto MicroSystems. Gestiona tu inscripción de manera fácil y rápida para acceder a nuestros programas académicos de excelencia.',
   openGraph: {
     images: [
       {
