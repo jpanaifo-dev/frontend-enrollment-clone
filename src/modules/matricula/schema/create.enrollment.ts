@@ -1,9 +1,7 @@
 import { z } from 'zod'
 
 export const enrollmentSchemaCreate = z.object({
-  student_file_uuid: z.string().uuid(),
-  // period_uuid: z.string().uuid(),
-  // payment_uuid: z.string().uuid(),
+  student_id: z.string(),
   enrollment_stage_id: z.string(),
   courses: z.array(
     z.object({

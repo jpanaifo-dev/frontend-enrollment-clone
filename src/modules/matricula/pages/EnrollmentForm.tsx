@@ -128,7 +128,7 @@ export const EnrollmentForm = ({
   } = useForm<IEnrollmentStageCreate>({
     resolver: zodResolver(enrollmentSchemaCreate),
     defaultValues: {
-      student_file_uuid: studentUuid || '',
+      student_id: studentUuid || '',
       enrollment_stage_id: enrollmentStage?.id.toString() || '',
       courses: coursesData.map(() => ({
         course_group_id: '',
@@ -224,12 +224,14 @@ export const EnrollmentForm = ({
     setShowConfirmationDialog(true)
   }
 
+  console.log('errors', errors)
+
   const handleConfirmDialog = async () => {
     setShowConfirmationDialog(false)
     setIsSubmitting(true)
     try {
       const enrollmentData: IEnrollmentStageCreate = {
-        student_file_uuid: formValues.student_file_uuid,
+        student_id: formValues.student_id,
         enrollment_stage_id: formValues.enrollment_stage_id,
         courses: formValues.courses
           .filter((course) => course.course_group_id !== '')
@@ -237,7 +239,7 @@ export const EnrollmentForm = ({
             course_group_id: course.course_group_id,
           })),
       }
-
+      console.log('Enrollment Data:', enrollmentData)
       const response = await createEnrollment(enrollmentData)
       // Aquí puedes agregar redirección o notificación de éxito
       if (response.status === 200 || response.status === 201) {
