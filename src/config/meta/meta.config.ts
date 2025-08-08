@@ -2,15 +2,15 @@ import { Metadata } from 'next'
 
 export const CONFIG_META = {
   title: {
-    template: '%s | UNAP',
-    default: 'UNAP',
+    template: '%s | IMS',
+    default: 'IMS',
   },
-  description: 'Sistema de Admisión UNAP',
+  description: 'Sistema de Admisión IMS',
   openGraph: {
-    title: 'Sistema de Admisión UNAP',
-    description: 'Sistema de Admisión UNAP',
+    title: 'Sistema de Admisión IMS',
+    description: 'Sistema de Admisión IMS',
     url: process.env.NEXT_PUBLIC_URL,
-    siteName: 'Sistema de Admisión UNAP',
+    siteName: 'Sistema de Admisión IMS',
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_URL}/images/logo.png`,
@@ -23,12 +23,8 @@ export const CONFIG_META = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sistema de Admisión UNAP',
-    description: 'Sistema de Admisión UNAP',
+    title: 'Sistema de Admisión IMS',
+    description: 'Sistema de Admisión IMS',
     images: [`${process.env.NEXT_PUBLIC_URL}/images/logo.png`],
   },
 } as Metadata
-
-// export const CONFIG_META_PAGES = {
-//     STUDENT_BASE: {
-//       title: {
