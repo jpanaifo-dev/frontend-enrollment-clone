@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         url: 'https://firebasestorage.googleapis.com/v0/b/coniap-iiap.appspot.com/o/EPG%2Fbanner_matricula.webp?alt=media&token=8266aa05-9ae2-4bbb-ba20-9c88c25564dd',
         width: 1000,
         height: 630,
-        alt: 'Matrícula de Postgrado | UNAP',
+        alt: 'Instituto Mycrosystem - IMS',
       },
     ],
   },

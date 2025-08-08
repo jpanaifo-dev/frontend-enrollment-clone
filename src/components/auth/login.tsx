@@ -64,7 +64,7 @@ export const Login = (props: LoginProps) => {
     }, 1000)
   }
   const subTitleText =
-    'Ingresa tus credenciales para continuar al panel de administración. Si eres alumno, utiliza tu usuario y contraseña asignados para acceder al sistema de matrícula.'
+    'Ingresa tus credenciales para iniciar sesión como estudiante y poder acceder a tus cursos y materiales académicos.'
 
   return (
     <AuthLayout
