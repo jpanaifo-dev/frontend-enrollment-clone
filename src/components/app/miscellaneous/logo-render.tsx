@@ -28,10 +28,10 @@ export const LogoRender = ({
       >
         {!nameApp && (
           <Image
-            src="/brands/postgrado_unap_white.webp"
+            src="/brands/isologo_ims_white.png"
             alt="logo-epg"
-            className="w-52 h-14"
-            width={300}
+            className="w-24 h-14"
+            width={200}
             height={40}
           />
         )}

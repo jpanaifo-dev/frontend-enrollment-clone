@@ -13,7 +13,7 @@ export default async function Layout({
 
   let personData: IPerson = {} as IPerson
 
-  const [person] = await Promise.all([fetchPerson(data?.person_token)])
+  const [person] = await Promise.all([fetchPerson(data?.person.id.toString())])
 
   if (person.status === 200 && person.data) {
     personData = person.data
@@ -31,7 +31,7 @@ Revisa tus datos, selecciona tus cursos y completa tu inscripción en pocos paso
       <BannerSection
         title={welcomeMessage}
         description={description}
-        backgroundImage="/images/bg-matricula.webp"
+        backgroundImage="/images/campus-bg.png"
       />
       <main className="container mx-auto space-y-6 pt-20 sm:pt-16 pb-10">
         {children}

@@ -14,14 +14,10 @@ export const NavbarUser = ({
   email,
 }: NavigationMenuDemoProps) => {
   return (
-    <nav className="bg-blue-950 border-b border-white sticky top-0 right-0 left-0 z-40">
+    <nav className="bg-[#061B33] border-b border-red-200 sticky top-0 right-0 left-0 z-40">
       <header className="container mx-auto  py-3 flex items-center justify-between gap-8">
         <LogoRender
-          href={
-            !person
-              ? APP_URL.HOME.LANDING
-              : APP_URL.HOME.URL_BASE
-          }
+          href={!person ? APP_URL.HOME.LANDING : APP_URL.HOME.URL_BASE}
           className="w-full max-w-[160px]"
         />
         {/*Menu de navegación desktop*/}
