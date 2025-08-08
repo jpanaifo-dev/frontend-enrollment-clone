@@ -91,7 +91,12 @@ export const MatriculasListSection = (props: MatriculasListSectionProps) => {
                     >
                       Período: {matricula?.period_name}
                     </Badge>
-                    <p className={cn('line-clamp-2', 'text-gray-600')}>
+                    <p
+                      className={cn(
+                        'line-clamp-2 text-xl md:text-2xl font-bold',
+                        'text-gray-800'
+                      )}
+                    >
                       {matricula.description}
                     </p>
                   </div>

@@ -19,6 +19,7 @@ export interface IStudentProgram {
   program_name: string
   program_description: string
   is_active: boolean
+  program_background?: string
 }
 
 export interface IStudentDetails {

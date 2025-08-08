@@ -40,7 +40,7 @@ export const ProgramsList = (props: IProps) => {
             {/* Imagen del programa */}
             <div className="relative h-40 w-full md:w-48 md:h-52 md:flex-shrink-0 lg:w-64 lg:h-56">
               <Image
-                src="/images/program-default.jpg"
+                src={programa.program_background || '/images/default-program-bg.webp'}
                 alt={programa.program_name}
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 width={600}
