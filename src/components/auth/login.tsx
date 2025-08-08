@@ -72,6 +72,7 @@ export const Login = (props: LoginProps) => {
       backgroundImage="/images/bg-matricula.webp"
       subTitle={subTitleText}
       systemName="¡MATRÍCULATE YA!"
+      logoUrl="/brands/isologo_ims.png"
     >
       <div className="text-center lg:text-left">
         <div className="flex items-center justify-center mb-4 md:hidden">
