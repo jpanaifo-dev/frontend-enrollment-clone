@@ -29,6 +29,10 @@ export function AuthLayout({
 
   return (
     <div className="flex min-h-screen">
+      {/* Left side - Form content */}
+      <div className="w-full lg:w-2/5 flex items-center justify-center p-8 bg-white">
+        <div className="w-full max-w-md space-y-8">{children}</div>
+      </div>
       {/* Left side - Background with gradient overlay */}
       <div className="hidden lg:flex w-3/5 relative flex-col p-8 justify-between">
         {/* Background image with gradient overlay */}
@@ -66,7 +70,8 @@ export function AuthLayout({
         <Link
           href={homeUrl}
           className="hover:cursor-pointer z-10"
-          legacyBehavior>
+          legacyBehavior
+        >
           <div className="flex items-center gap-2 text-white">
             <Image
               src={logoUrl}
@@ -98,11 +103,6 @@ export function AuthLayout({
           )}
         </div>
       </div>
-
-      {/* Right side - Form content */}
-      <div className="w-full lg:w-2/5 flex items-center justify-center p-8 bg-white">
-        <div className="w-full max-w-md space-y-8">{children}</div>
-      </div>
     </div>
-  );
+  )
 }
