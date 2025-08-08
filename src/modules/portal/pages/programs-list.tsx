@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { IStudentProgram } from '@/types'
-import { GraduationCap, Building2, BookOpen } from 'lucide-react'
+import { GraduationCap } from 'lucide-react'
+import Image from 'next/image'
 
 interface IProps {
   programsList?: IStudentProgram[]
@@ -30,34 +31,40 @@ export const ProgramsList = (props: IProps) => {
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         {programsList.map((programa, index) => (
           <Card
             key={index}
-            className="transition-all duration-200 hover:shadow-md hover:border-primary/20 group shadow-none"
+            className="transition-all duration-200 shadow-none hover:border-primary/20 group overflow-hidden flex flex-col md:flex-row h-full relative pt-0 pb-0"
           >
-            <CardContent className="p-6 py-2">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 flex flex-col gap-2">
-                  {/* Nombre del programa */}
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-lg bg-primary/10 p-2">
-                      <BookOpen className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
-                        {programa.program_name}
-                      </h3>
-                    </div>
-                  </div>
+            {/* Imagen del programa */}
+            <div className="relative h-40 w-full md:w-48 md:h-52 md:flex-shrink-0 lg:w-64 lg:h-56">
+              <Image
+                src="/images/program-default.jpg"
+                alt={programa.program_name}
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                width={600}
+                height={200}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:bg-gradient-to-r" />
 
-                  {/* Facultad */}
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Building2 className="w-4 h-4" />
-                    <span className="font-medium">Facultad:</span>
-                    <span>{programa.program_description}</span>
-                  </div>
+              {/* Chip en esquina superior derecha */}
+              {programa.program_code && (
+                <div className="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">
+                  {programa.program_code}
                 </div>
+              )}
+            </div>
+
+            {/* Contenido del card */}
+            <CardContent className="p-4 md:p-4 flex-1 lg:p-6">
+              <div className="flex flex-col gap-3 h-full">
+                {/* Nombre del programa */}
+                <h3 className="font-extrabold text-xl lg:text-2xl text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                  {programa.program_name}
+                </h3>
+                {/* Descripción */}
+                <p className="line-clamp-4">{programa.program_description}</p>
               </div>
             </CardContent>
           </Card>
