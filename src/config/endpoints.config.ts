@@ -16,7 +16,7 @@ const BASE_PATHS = {
 
 const MODELS_PATHS = {
   USER: 'users/',
-  PERSON: 'persons/',
+  PERSON: 'person/',
 }
 
 export const ENDPOINTS_CONFIG = {

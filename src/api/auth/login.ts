@@ -16,7 +16,6 @@ export const fetchLogin = async (
 
   try {
     const response = await fetchUserService.post(path, data, false, headers)
-    console.log('Response from login:', response)
     if (!response.ok) {
       const errorResponse = await response.json()
       console.error('Error al iniciar sesión:', errorResponse)
@@ -28,6 +27,7 @@ export const fetchLogin = async (
     }
 
     const responseData: IUserAuth = await response.json()
+    console.log('Login successful:', responseData)
     await createSession(responseData, responseData.expires_at)
     return {
       status: response.status,

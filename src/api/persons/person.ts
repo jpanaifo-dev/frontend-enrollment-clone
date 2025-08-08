@@ -71,6 +71,7 @@ export const fetchPerson = async (
 
   try {
     const response = await fetchPersonService.get(url)
+    console.log('Response:', response)
 
     if (!response.ok) {
       const errorResponse: {
