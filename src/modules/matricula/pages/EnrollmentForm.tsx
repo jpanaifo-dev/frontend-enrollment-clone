@@ -87,7 +87,6 @@ export const EnrollmentForm = ({
   studentInfo,
   enrollmentStage,
   studentUuid,
-  paymentUuid,
 }: EnrollmentProps) => {
   const [stepType, setStepType] = useState<'form' | 'summary'>('form')
   const [selectedCourses, setSelectedCourses] = useState<SelectedCourse[]>([])
@@ -130,8 +129,6 @@ export const EnrollmentForm = ({
     resolver: zodResolver(enrollmentSchemaCreate),
     defaultValues: {
       student_file_uuid: studentUuid || '',
-      // period_uuid: enrollmentStage?.period_uuid || '',
-      payment_uuid: paymentUuid || '',
       enrollment_stage_id: enrollmentStage?.id.toString() || '',
       courses: coursesData.map(() => ({
         course_group_id: '',
@@ -233,8 +230,6 @@ export const EnrollmentForm = ({
     try {
       const enrollmentData: IEnrollmentStageCreate = {
         student_file_uuid: formValues.student_file_uuid,
-        period_uuid: formValues.period_uuid,
-        payment_uuid: formValues.payment_uuid,
         enrollment_stage_id: formValues.enrollment_stage_id,
         courses: formValues.courses
           .filter((course) => course.course_group_id !== '')

@@ -12,11 +12,9 @@ interface IProps {
 }
 
 export default async function Page(props: IProps) {
-  const params = await props.params
   const searchParams = await props.searchParams
   const matricula_id = searchParams.matricula
   const student_uuid = searchParams.student
-  const payment_uuid = params.slug
 
   {
     /* Obtenemos los grupos de matricula */
@@ -42,7 +40,6 @@ export default async function Page(props: IProps) {
       studentUuid={student_uuid?.toString() || undefined}
       enrollmentStage={response.data || undefined}
       coursesData={responseGrupos.data || []}
-      paymentUuid={payment_uuid?.toString() || undefined}
     />
   )
 }
