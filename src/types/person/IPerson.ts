@@ -2,6 +2,7 @@
 import { IUser } from '../accounts'
 
 export interface IPerson {
+  id: number
   uuid: string
   document_number: string
   names: string

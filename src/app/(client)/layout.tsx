@@ -21,7 +21,7 @@ export default async function Layout({
   const data: IUserAuth = sessionData as unknown as IUserAuth
 
   let personData: IPerson | null = null
-  const [person] = await Promise.all([fetchPerson(data?.person_token)])
+  const [person] = await Promise.all([fetchPerson(data?.person.id.toString())])
 
   if (person.status === 200 && person.data) {
     personData = person.data
