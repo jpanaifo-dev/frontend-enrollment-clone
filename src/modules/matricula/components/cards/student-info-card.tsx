@@ -16,41 +16,12 @@ export const StudentInfoCard = ({ studentInfo }: StudentInfoCardProps) => {
         bg-gray-500 hover:bg-gray-400 text-xs
         "
         >
-          {studentInfo.program_code}
+          {studentInfo.program?.code}
         </Badge>
         <h2 className="text-xl font-bold text-gray-900 mb-3">
-          {studentInfo.program_name}
+          {studentInfo.program?.name}
         </h2>
-      </div>
-
-      {/* Program Details */}
-      <div className="space-y-4 mb-6">
-        <div>
-          <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
-            Modalidad
-          </div>
-          <div className="font-medium text-gray-900">
-            {studentInfo.modality_name}
-          </div>
-        </div>
-
-        <div>
-          <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
-            Unidad
-          </div>
-          <div className="font-medium text-gray-900">
-            {studentInfo.unity_name}
-          </div>
-        </div>
-
-        <div>
-          <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
-            Plan de estudios
-          </div>
-          <div className="font-medium text-gray-900">
-            {studentInfo.plan_study_description}
-          </div>
-        </div>
+        <p>{studentInfo.program?.description || 'No description available'}</p>
       </div>
 
       {/* Student Information */}
@@ -62,7 +33,7 @@ export const StudentInfoCard = ({ studentInfo }: StudentInfoCardProps) => {
               Alumno
             </div>
             <div className="font-medium text-gray-900">
-              {studentInfo.person_name}
+              {`${studentInfo.person?.last_name1} ${studentInfo.person?.last_name2} ${studentInfo.person?.names}`}
             </div>
           </div>
         </div>
@@ -73,9 +44,7 @@ export const StudentInfoCard = ({ studentInfo }: StudentInfoCardProps) => {
             <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
               Código de alumno
             </div>
-            <div className="font-medium text-gray-900">
-              {studentInfo.university_code}
-            </div>
+            <div className="font-medium text-gray-900">{studentInfo.code}</div>
           </div>
         </div>
       </div>

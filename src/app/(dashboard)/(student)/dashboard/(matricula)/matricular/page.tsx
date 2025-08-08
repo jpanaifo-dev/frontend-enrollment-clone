@@ -32,9 +32,6 @@ export default async function Page(props: IProps) {
     stage_uuid: matricula_id?.toString() || '',
   })
 
-  {
-    /* Obtenemos la informacion del estudiante */
-  }
   const studentData = await fetchDetailsStudentFile({
     id: Number(student_uuid),
   })

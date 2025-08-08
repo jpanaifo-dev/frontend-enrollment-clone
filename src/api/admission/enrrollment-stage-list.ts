@@ -135,17 +135,17 @@ export const fetchEnrollmentStageBy = async ({
   }
 }
 
-export const fetchDetailsStudentFile = async ({
-  id,
-}: IStudentFilters): Promise<{
+export const fetchDetailsStudentFile = async (
+  filters?: IStudentFilters
+): Promise<{
   status: number
   data?: IStudentDetails | null
   errors?: string[]
 }> => {
   const params = new URLSearchParams()
 
-  if (typeof id === 'object' && id !== null) {
-    Object.entries(id).forEach(([key, value]) => {
+  if (filters) {
+    Object.entries(filters).forEach(([key, value]) => {
       if (value !== undefined) {
         params.append(key, String(value))
       }
@@ -156,6 +156,7 @@ export const fetchDetailsStudentFile = async ({
 
   try {
     const response = await fetchAcademicService.get(url)
+    console.log('Response from student details:', response)
     if (!response.ok) {
       const errorResponse: {
         [key: string]: string[]
