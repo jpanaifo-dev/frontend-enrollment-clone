@@ -14,15 +14,19 @@ const BASE_PATHS = {
   ECONOMIC: 'economic/',
 }
 
+const MODELS_PATHS = {
+  USER: 'users/',
+}
+
 export const ENDPOINTS_CONFIG = {
   AUTH: {
-    LOGIN: `${BASE_PATHS.AUTH}user/login/`,
-    EMAIL_ACCESS_CODE: `${BASE_PATHS.AUTH}user/email-code/`,
-    VERIFY_ACCESS_CODE: `${BASE_PATHS.AUTH}user/verify-code/`,
-    RECOVERY_PASSWORD: `${BASE_PATHS.AUTH}user/recovery-password/`,
-    EMAIL_APPLICANT: `${BASE_PATHS.AUTH}user/email-applicant/`,
-    REFRESH_SESSION: `${BASE_PATHS.AUTH}user/refresh-session/`,
-    LOGIN_WITH_GOOGLE: `${BASE_PATHS.AUTH}user/google_sign_in/`,
+    LOGIN: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}login/`,
+    EMAIL_ACCESS_CODE: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}email-code/`,
+    VERIFY_ACCESS_CODE: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}verify-code/`,
+    RECOVERY_PASSWORD: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}recovery-password/`,
+    EMAIL_APPLICANT: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}email-applicant/`,
+    REFRESH_SESSION: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}refresh-session/`,
+    LOGIN_WITH_GOOGLE: `${BASE_PATHS.AUTH}${MODELS_PATHS.USER}google_sign_in/`,
   },
   ACCOUNTS: {
     ACCESS_MENU: `${BASE_PATHS.ACCOUNTS}user/accessmenu/`,
