@@ -50,8 +50,7 @@ import { colors, days, hours } from './enrollment.utils'
 import { isValidDateString } from './utils'
 
 const steps = [
-  { title: 'Validar pago' },
-  { title: 'Validar email' },
+  { title: 'Comenzar Matrcula' },
   { title: 'Seleccion de grupos' },
   { title: 'Confirmar matrícula' },
 ]
@@ -131,7 +130,7 @@ export const EnrollmentForm = ({
     resolver: zodResolver(enrollmentSchemaCreate),
     defaultValues: {
       student_file_uuid: studentUuid || '',
-      period_uuid: enrollmentStage?.period_uuid || '',
+      // period_uuid: enrollmentStage?.period_uuid || '',
       payment_uuid: paymentUuid || '',
       enrollment_stage_id: enrollmentStage?.id.toString() || '',
       courses: coursesData.map(() => ({
@@ -460,7 +459,7 @@ export const EnrollmentForm = ({
         <div className="bg-slate-50">
           <div className="max-w-4xl mx-auto p-6">
             <Steps
-              currentStep={stepType === 'form' ? 3 : 4}
+              currentStep={stepType === 'form' ? 2 : 3}
               steps={steps}
             />
           </div>
