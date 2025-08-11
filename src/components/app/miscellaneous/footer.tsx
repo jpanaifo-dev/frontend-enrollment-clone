@@ -11,7 +11,7 @@ export const Footer = () => {
         {/* Sección de la institución */}
         <div>
           <LogoRender href={APP_URL.HOME.URL_BASE} />
-          <p className="text-sm text-gray-400 mt-2">
+          <p className="text-sm mt-2">
             Formación académica de excelencia para el desarrollo profesional y
             la investigación.
           </p>
@@ -19,10 +19,7 @@ export const Footer = () => {
             <div>
               <Pin size={16} />
             </div>
-            <span>
-              Escuela de Postgrado UNAP Calle los Rosales S/N - 5ta cuadra San
-              Juan Bautista
-            </span>
+            <span>Calle Ricardo Palma # 724. Calle Bolognesi # 680.</span>
           </div>
           <div className="flex items-center space-x-2 text-xs mt-4">
             <div>
@@ -56,7 +53,7 @@ export const Footer = () => {
           <ul className="text-sm space-y-2">
             <li className="flex items-center space-x-2">
               <Phone size={16} />
-              <span>+51 956 875 744</span>
+              <span>+51 65507534</span>
             </li>
             <li className="flex items-center space-x-2">
               <Mail size={16} />
