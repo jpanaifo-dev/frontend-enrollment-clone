@@ -1,4 +1,4 @@
-import { FileText, GraduationCap, HandCoins, History } from 'lucide-react'
+import { FileText, GraduationCap, History } from 'lucide-react'
 import { APP_URL } from '@/config/urls-data/student.urls.config'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -116,30 +116,6 @@ export const AcademicPortal = (props: AcademicPortalProps) => {
           {/* Elemento decorativo */}
           <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-200/30 rounded-full blur-xl"></div>
           <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-indigo-200/40 rounded-full blur-lg"></div>
-        </div>
-
-        {/* Tarjeta de Pagos con diseño moderno */}
-        <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-emerald-50 to-teal-100 p-6 shadow-sm border border-emerald-200">
-          <div className="relative z-10">
-            <div className="mb-3">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-emerald-500/10 mb-4">
-                <HandCoins className="h-6 w-6 text-emerald-600" />
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-green-900 mb-2">
-              ¿Necesitas revisar tu historial de pagos?
-            </h3>
-            <p className="text-green-600 mb-6 leading-relaxed">
-              Consulta todas tus transacciones y verifica el estado de tus pagos
-              de manera fácil.
-            </p>
-            <Link href={APP_URL.PAYMENTS.URL_BASE}>
-              <Button variant="outline">Ver Historial de Pagos</Button>
-            </Link>
-          </div>
-          {/* Elemento decorativo */}
-          <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-200/30 rounded-full blur-xl"></div>
-          <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-teal-200/40 rounded-full blur-lg"></div>
         </div>
       </div>
     </div>
