@@ -198,6 +198,7 @@ export const fetchDetailsStudentEnrollment = async ({
 
   try {
     const response = await fetchAcademicService.get(url)
+    console.log('Response Details Enrollment:', response)
     if (!response.ok) {
       const errorResponse: {
         [key: string]: string[]
