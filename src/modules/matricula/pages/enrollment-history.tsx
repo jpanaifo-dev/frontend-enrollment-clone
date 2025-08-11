@@ -53,7 +53,7 @@ export const HistorialTable = ({
                     {record.period_name}
                   </td>
                   <td className="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-900">
-                    {record.enrollment_type}
+                    {record.enrollment_type || '---'}
                   </td>
                   <td className="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                     {record.program}
