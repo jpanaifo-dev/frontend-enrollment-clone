@@ -95,7 +95,9 @@ export default function Home() {
                 href={APP_URL.AUTH.LOGIN}
                 className="flex items-center gap-2"
               >
-                <GraduationCap className="w-6 h-6" />
+                <div>
+                  <GraduationCap className="w-8 h-8" />
+                </div>
                 Iniciar Matrícula 2025
                 <ArrowRight className="w-5 h-5" />
               </Link>
