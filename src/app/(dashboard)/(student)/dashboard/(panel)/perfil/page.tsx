@@ -18,7 +18,7 @@ export default async function Page() {
   let ubigeoData: IUbigeo | null = null
 
   try {
-    const person = await fetchPerson(data?.person_token)
+    const person = await fetchPerson(data?.person.id.toString())
     if (person.status === 200 && person.data) {
       personData = person.data
     }
