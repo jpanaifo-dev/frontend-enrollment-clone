@@ -5,105 +5,101 @@ import Link from 'next/link'
 import {
   ArrowRight,
   Award,
+  Globe,
   GraduationCap,
-  Info,
+  Lightbulb,
   Trophy,
   Users,
 } from 'lucide-react'
 
 import SectionWrapper from '@/components/app/SectionWrapper'
-import ProcessCard from '@/components/app/ProcessCard'
-import PaymentCard from '@/components/app/PaymentCard'
 import RecommendationCard from '@/components/app/RecommendationCard'
 import DocumentCard from '@/components/app/DocumentCard'
-import PaymentMethod from '@/components/app/PaymentMethod'
-import {
-  DOCUMENT_URLS,
-  PROCESS_DATES,
-  PAYMENT_INFO,
-  RECOMMENDATIONS,
-} from './home.constants'
+import { DOCUMENT_URLS, RECOMMENDATIONS } from './home.constants'
 import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-          alt="Students studying at Instituto Mycrosystem"
-          className="object-cover w-full h-full"
-          width={1920}
-          height={1080}
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/70 to-transparent"></div>
-      </div>
+      <main className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            alt="Students studying at Instituto Mycrosystem"
+            className="object-cover w-full h-full"
+            width={1920}
+            height={1080}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/70 to-transparent"></div>
+        </div>
+        <div className="relative z-10 container mx-auto px-4 py-20">
+          <div className="max-w-3xl">
+            <Badge className="mb-6 bg-red-800 text-white px-4 py-2 text-sm font-semibold">
+              MATRÍCULA 2025-I DISPONIBLE
+            </Badge>
 
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-3xl">
-          <Badge className="mb-6 bg-red-800 text-white px-4 py-2 text-sm font-semibold">
-            MATRÍCULA 2025-I DISPONIBLE
-          </Badge>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              <span className="text-yellow-400">Instituto</span>
+              <br />
+              <span className="text-white">Mycrosystem</span>
+            </h1>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            <span className="text-yellow-400">Instituto</span>
-            <br />
-            <span className="text-white">Mycrosystem</span>
-          </h1>
-
-          <div className="mb-8 flex gap-4">
-            <div className="w-1 h-32 bg-yellow-400"></div>
-            <div>
-              <h2 className="text-white text-2xl font-bold mb-4">
-                Forjamos el futuro tecnológico
-              </h2>
-              <p className="text-gray-200 text-lg leading-relaxed mb-6">
-                Únete a la institución líder en formación tecnológica.
-                Desarrollamos profesionales competentes con visión innovadora,
-                preparados para los desafíos del mundo digital.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2 text-yellow-400">
-                  <Award className="w-5 h-5" />
-                  <span className="text-sm font-medium">
-                    Certificación Internacional
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 text-yellow-400">
-                  <Users className="w-5 h-5" />
-                  <span className="text-sm font-medium">+5,000 Graduados</span>
-                </div>
-                <div className="flex items-center gap-2 text-yellow-400">
-                  <Trophy className="w-5 h-5" />
-                  <span className="text-sm font-medium">
-                    95% Inserción Laboral
-                  </span>
+            <div className="mb-8 flex gap-4">
+              <div className="w-1 h-32 bg-yellow-400"></div>
+              <div>
+                <h2 className="text-white text-2xl font-bold mb-4">
+                  Forjamos el futuro tecnológico
+                </h2>
+                <p className="text-gray-200 text-lg leading-relaxed mb-6">
+                  Únete a la institución líder en formación tecnológica.
+                  Desarrollamos profesionales competentes con visión innovadora,
+                  preparados para los desafíos del mundo digital.
+                </p>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-yellow-400">
+                    <Award className="w-5 h-5" />
+                    <span className="text-sm font-medium">
+                      Certificación Internacional
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-yellow-400">
+                    <Users className="w-5 h-5" />
+                    <span className="text-sm font-medium">
+                      +5,000 Graduados
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-yellow-400">
+                    <Trophy className="w-5 h-5" />
+                    <span className="text-sm font-medium">
+                      95% Inserción Laboral
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-6 text-lg font-bold rounded-lg transition-all duration-300 hover:scale-105"
-              asChild
-            >
-              <Link
-                href={APP_URL.AUTH.LOGIN}
-                className="flex items-center gap-2"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-6 text-lg font-bold rounded-lg transition-all duration-300 hover:scale-105"
+                asChild
               >
-                <div>
-                  <GraduationCap className="w-8 h-8" />
-                </div>
-                Iniciar Matrícula 2025
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
+                <Link
+                  href={APP_URL.AUTH.LOGIN}
+                  className="flex items-center gap-2"
+                >
+                  <div>
+                    <GraduationCap className="w-8 h-8" />
+                  </div>
+                  Iniciar Matrícula 2025
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
 
-            {/* <Button
+              {/* <Button
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300"
@@ -111,99 +107,99 @@ export default function Home() {
             >
               <Link href="#programas">Conocer Programas</Link>
             </Button> */}
-          </div>
-        </div>
-      </div>
-
-      {/* Process Steps Section */}
-      <SectionWrapper
-        title="Etapas del proceso"
-        description="Infórmate sobre tu cronograma de matrícula y realiza tu inscripción a tiempo para evitar contratiempos o recargos."
-      >
-        <div className="grid md:grid-cols-3 gap-8">
-          <ProcessCard
-            title="Pago por derecho de matrícula"
-            description="Es el primer paso del proceso. Realiza el pago correspondiente para habilitar tu matrícula en el sistema."
-            date={PROCESS_DATES.PAYMENT}
-            borderColor="border border-gray-200"
-            textColor="text-blue-900"
-          />
-          <ProcessCard
-            title="Matrícula regular"
-            description="Completa tu matrícula en las fechas regulares para evitar recargos adicionales y asegurar la disponibilidad de materias."
-            date={PROCESS_DATES.REGULAR}
-            borderColor="border border-blue-200"
-            textColor="text-blue-600"
-          />
-          <ProcessCard
-            title="Matrícula extemporánea"
-            description="Se habilita excepcionalmente tras el vencimiento del período regular y está sujeta a recargos económicos."
-            date={PROCESS_DATES.LATE}
-            borderColor="border border-red-200"
-            textColor="text-red-600"
-          />
-        </div>
-      </SectionWrapper>
-
-      {/* Payment Information Section */}
-      <SectionWrapper
-        title="Información de pagos"
-        description="Revisa los conceptos, montos y plazos de pago necesarios para completar tu matrícula."
-        bgColor="bg-gray-50"
-      >
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Medios disponibles para el pago
-            </h3>
-            <div className="flex justify-center mb-6">
-              <PaymentMethod
-                image="/images/bg-bn.webp"
-                alt="Banco de la Nación"
-                width={160}
-                height={80}
-                className="mr-12"
-              />
-              <PaymentMethod
-                image="/images/bg-pagalo.webp"
-                alt="Págalo.pe"
-                width={120}
-                height={50}
-              />
-            </div>
-            <div className="flex space-x-1.5 text-gray-500">
-              <Info
-                size={34}
-                width={44}
-                height={18}
-              />
-              <p className="text-xs max-w-xs leading-relaxed">
-                Una vez realizado el pago, deberás esperar 24 horas para que se
-                active. No intentes matricularte inmediatamente después de
-                pagar.
-              </p>
             </div>
           </div>
-
-          <PaymentCard
-            title="Pago por matrícula regular"
-            amount={PAYMENT_INFO.REGULAR.amount}
-            code={PAYMENT_INFO.REGULAR.code}
-            dates={PAYMENT_INFO.REGULAR.dates}
-            gradient="bg-gradient-to-br from-[#006FEE] to-[#003F88]"
-            iconColor="bg-blue-500"
-          />
-
-          <PaymentCard
-            title="Pago por matrícula extemporánea"
-            amount={PAYMENT_INFO.LATE.amount}
-            code={PAYMENT_INFO.LATE.code}
-            dates={PAYMENT_INFO.LATE.dates}
-            gradient="bg-gradient-to-br from-[#D32F2F] to-[#6D1818]"
-            iconColor="bg-red-500"
-          />
         </div>
-      </SectionWrapper>
+        {/* Floating Stats */}
+        <div className="absolute bottom-8 left-8 right-8 z-10 hidden md:block">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-4 gap-4 max-w-2xl">
+              {[
+                { number: '25+', label: 'Años de Experiencia' },
+                { number: '50+', label: 'Docentes Especializados' },
+                { number: '15', label: 'Programas Académicos' },
+                { number: '98%', label: 'Satisfacción Estudiantil' },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/20"
+                >
+                  <div className="text-2xl font-bold text-yellow-400">
+                    {stat.number}
+                  </div>
+                  <div className="text-xs text-white font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 px-4 py-2">
+              ¿Por qué elegir Mycrosystem?
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Excelencia académica que transforma vidas
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Somos más que una institución educativa. Somos tu aliado
+              estratégico para alcanzar el éxito profesional en el mundo
+              tecnológico.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                icon: <Lightbulb className="w-8 h-8" />,
+                title: 'Metodología Innovadora',
+                description:
+                  'Aprendizaje basado en proyectos reales con tecnología de vanguardia y enfoque práctico.',
+                color: 'bg-blue-500',
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: 'Docentes Expertos',
+                description:
+                  'Profesionales activos en la industria que comparten experiencia real y conocimiento actualizado.',
+                color: 'bg-green-500',
+              },
+              {
+                icon: <Globe className="w-8 h-8" />,
+                title: 'Certificación Internacional',
+                description:
+                  'Títulos y certificaciones reconocidas mundialmente que abren puertas en cualquier país.',
+                color: 'bg-purple-500',
+              },
+            ].map((feature, index) => (
+              <Card
+                key={index}
+                className="group shadow-none transition-all duration-300 hover:-translate-y-2 rounded-sm border"
+              >
+                <CardContent className="p-8 text-center">
+                  <div
+                    className={`${feature.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Recommendations Section */}
       <SectionWrapper
