@@ -19,7 +19,6 @@ export const createEnrollment = async (
 
   try {
     const response = await fetchAcademicService.post(path, data)
-    console.log('Response from createEnrollment:', response)
     if (!response.ok) {
       const errorResponse: { [key: string]: string[] } = await response.json()
       const errorMessages = Object.values(errorResponse).flat()

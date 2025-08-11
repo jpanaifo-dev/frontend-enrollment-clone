@@ -21,10 +21,10 @@ export default async function Page(props: PageProps) {
 
   const dataUser = await getUserAuth()
   const responsePrograms = await fetchProgramsStudent({
-    person_uuid: dataUser?.person_token || '',
+    person_uuid: dataUser?.person.id.toString() || '',
   })
 
-  const uuid_student = responsePrograms.data?.[0]?.uuid || student_uuid
+  const uuid_student = responsePrograms.data?.[0]?.id || student_uuid
 
   const responseHistorial = await fetchStudentEnrollmentList({
     student_uuid: String(uuid_student),

@@ -11,7 +11,7 @@ export default async function Layout({
 }) {
   const dataUser = await getUserAuth()
   const responsePrograms = await fetchProgramsStudent({
-    person_uuid: dataUser?.person_token || '',
+    person_uuid: dataUser?.person.id.toString() || '',
   })
 
   const welcomeMessage = `Mis Matrículas`
