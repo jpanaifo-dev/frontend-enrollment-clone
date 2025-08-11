@@ -114,7 +114,6 @@ export const MobileMenu = ({
             // href={ADMISSION_URLS_APP.HOME.LANDING}
             href={'#'}
             className="flex items-center justify-center gap-2 p-4"
-            legacyBehavior
           >
             <Image
               src="/brands/postgrado_dark_blue.webp"

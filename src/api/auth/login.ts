@@ -27,7 +27,6 @@ export const fetchLogin = async (
     }
 
     const responseData: IUserAuth = await response.json()
-    console.log('Login successful:', responseData)
     await createSession(responseData, responseData.expires_at)
     return {
       status: response.status,

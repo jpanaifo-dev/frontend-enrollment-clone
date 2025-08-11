@@ -71,28 +71,19 @@ export const Footer = () => {
               <span>postgrado@unapiquitos.edu.pe</span>
             </li>
             <li className="flex items-center space-x-2">
-              <Link
-                href="https://www.facebook.com/postgradounap/"
-                legacyBehavior
-              >
+              <Link href="https://www.facebook.com/postgradounap/">
                 <Facebook
                   size={16}
                   className="hover:text-gray-300"
                 />
               </Link>
-              <Link
-                href="https://www.linkedin.com/company/posgradounap"
-                legacyBehavior
-              >
+              <Link href="https://www.linkedin.com/company/posgradounap">
                 <Linkedin
                   size={16}
                   className="hover:text-gray-300"
                 />
               </Link>
-              <Link
-                href="https://twitter.com/postgradounap"
-                legacyBehavior
-              >
+              <Link href="https://twitter.com/postgradounap">
                 <X
                   size={16}
                   className="hover:text-gray-300"

@@ -36,7 +36,7 @@ export const BreadcrumbCustom = (props: BreadcrumbCustomProps) => {
                 className="capitalize text-xs"
                 asChild
               >
-                <Link href={href} legacyBehavior>{pathReplace}</Link>
+                <Link href={href}>{pathReplace}</Link>
               </BreadcrumbLink>
             ) : (
               <BreadcrumbPage className="capitalize text-xs">
@@ -46,7 +46,7 @@ export const BreadcrumbCustom = (props: BreadcrumbCustomProps) => {
           </BreadcrumbItem>
           {index < paths.length - 1 && <BreadcrumbSeparator />}
         </div>
-      );
+      )
     })
 
     return breadcrumbPaths

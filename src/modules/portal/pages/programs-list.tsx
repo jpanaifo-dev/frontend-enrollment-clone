@@ -1,7 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { IStudentProgram } from '@/types'
 import { GraduationCap } from 'lucide-react'
-import Image from 'next/image'
 
 interface IProps {
   programsList?: IStudentProgram[]
@@ -39,13 +38,13 @@ export const ProgramsList = (props: IProps) => {
           >
             {/* Imagen del programa */}
             <div className="relative h-40 w-full md:w-48 md:h-52 md:flex-shrink-0 lg:w-64 lg:h-56">
-              <Image
+              <img
                 src={
                   programa.program_background ||
                   '/images/default-program-bg.webp'
                 }
                 alt={programa.program_name}
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-300 h-full"
                 width={600}
                 height={200}
               />
@@ -54,7 +53,7 @@ export const ProgramsList = (props: IProps) => {
               {/* Chip en esquina superior derecha */}
               {programa.program_code && (
                 <div className="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">
-                  {programa.program_code}
+                  Cod {programa.program_code}
                 </div>
               )}
             </div>

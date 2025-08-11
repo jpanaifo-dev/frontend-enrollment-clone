@@ -50,7 +50,10 @@ export const AcademicCard = ({
 
         {/* Botón con redirección */}
         {href && (
-          <Link href={href} passHref legacyBehavior>
+          <Link
+            href={href}
+            passHref
+          >
             <Button
               variant={buttonVariant}
               className={`w-full ${
@@ -65,5 +68,5 @@ export const AcademicCard = ({
         )}
       </CardContent>
     </Card>
-  );
+  )
 }
