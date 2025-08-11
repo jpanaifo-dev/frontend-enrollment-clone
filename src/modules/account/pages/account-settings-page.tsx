@@ -10,7 +10,7 @@ export const AccountSettingsPage = ({ userAuth }: AccountSettingsPageProps) => {
   return (
     <main className="grid grid-cols-1 gap-4 px-4 pb-4 md:gap-8 ">
       <ChangeEmailForm userAuth={userAuth} />
-      <ChangePasswordForm userToken={userAuth?.user_token} />
+      <ChangePasswordForm userToken={userAuth?.user_id} />
     </main>
   )
 }
