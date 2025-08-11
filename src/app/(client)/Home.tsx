@@ -2,7 +2,14 @@ import { Button } from '@/components/ui/button'
 import { APP_URL } from '@/config/urls-data/student.urls.config'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Info } from 'lucide-react'
+import {
+  ArrowRight,
+  Award,
+  GraduationCap,
+  Info,
+  Trophy,
+  Users,
+} from 'lucide-react'
 
 import SectionWrapper from '@/components/app/SectionWrapper'
 import ProcessCard from '@/components/app/ProcessCard'
@@ -16,57 +23,95 @@ import {
   PAYMENT_INFO,
   RECOMMENDATIONS,
 } from './home.constants'
+import { Badge } from '@/components/ui/badge'
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <main className="relative min-h-[calc(100vh-80px)] flex flex-row items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/background-landing.webp"
-            alt="University campus with students"
-            className="object-cover"
-            width={1920}
-            height={1080}
-            priority
-          />
-          <div className="absolute inset-0 bg-slate-900/70"></div>
-        </div>
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          alt="Students studying at Instituto Mycrosystem"
+          className="object-cover w-full h-full"
+          width={1920}
+          height={1080}
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/70 to-transparent"></div>
+      </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <div className="max-w-2xl">
-            <h1 className="text-6xl md:text-7xl font-extrabold text-yellow-400 mb-8 leading-tight">
-              MATRÍCULA
-              <br />
-              2025 - I
-            </h1>
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="max-w-3xl">
+          <Badge className="mb-6 bg-red-800 text-white px-4 py-2 text-sm font-semibold">
+            MATRÍCULA 2025-I DISPONIBLE
+          </Badge>
 
-            <div className="mb-5 flex gap-4">
-              <div className="w-1 h-28 bg-yellow-400 mb-4"></div>
-              <div>
-                <p className="text-white text-lg font-semibold mb-1">
-                  ¡Bienvenido(a) ingresante!
-                </p>
-                <p className="text-white text-lg leading-relaxed">
-                  Gracias por formar parte de nuestra comunidad académica.
-                  <br />
-                  Estamos muy contentos de recibirte y de acompañarte en este
-                  nuevo camino de aprendizaje, retos y logros.
-                </p>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            <span className="text-yellow-400">Instituto</span>
+            <br />
+            <span className="text-white">Mycrosystem</span>
+          </h1>
+
+          <div className="mb-8 flex gap-4">
+            <div className="w-1 h-32 bg-yellow-400"></div>
+            <div>
+              <h2 className="text-white text-2xl font-bold mb-4">
+                Forjamos el futuro tecnológico
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed mb-6">
+                Únete a la institución líder en formación tecnológica.
+                Desarrollamos profesionales competentes con visión innovadora,
+                preparados para los desafíos del mundo digital.
+              </p>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 text-yellow-400">
+                  <Award className="w-5 h-5" />
+                  <span className="text-sm font-medium">
+                    Certificación Internacional
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-yellow-400">
+                  <Users className="w-5 h-5" />
+                  <span className="text-sm font-medium">+5,000 Graduados</span>
+                </div>
+                <div className="flex items-center gap-2 text-yellow-400">
+                  <Trophy className="w-5 h-5" />
+                  <span className="text-sm font-medium">
+                    95% Inserción Laboral
+                  </span>
+                </div>
               </div>
             </div>
+          </div>
 
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-md"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-6 text-lg font-bold rounded-lg transition-all duration-300 hover:scale-105"
               asChild
             >
-              <Link href={APP_URL.AUTH.LOGIN}>Empezar matrícula</Link>
+              <Link
+                href={APP_URL.AUTH.LOGIN}
+                className="flex items-center gap-2"
+              >
+                <GraduationCap className="w-6 h-6" />
+                Iniciar Matrícula 2025
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </Button>
+
+            {/* <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300"
+              asChild
+            >
+              <Link href="#programas">Conocer Programas</Link>
+            </Button> */}
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Process Steps Section */}
       <SectionWrapper

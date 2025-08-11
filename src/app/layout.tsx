@@ -6,7 +6,7 @@ import { Providers } from './providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Matrícula de Postgrado | IMS',
+  title: 'Matrícula | IMS',
   description:
     'Realiza tu matrícula en el Instituto MicroSystems. Gestiona tu inscripción de manera fácil y rápida para acceder a nuestros programas académicos de excelencia.',
   openGraph: {
