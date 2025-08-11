@@ -238,7 +238,7 @@ export const fetchStudentEnrollmentList = async ({
   data?: IEnrollmentList[] | null
   errors?: string[]
 }> => {
-  const url = `${API_BASE.ENROLLMENT_LIST}?student_uuid=${student_uuid}`
+  const url = `${API_BASE.ENROLLMENT_LIST}?student_id=${student_uuid}`
 
   try {
     const response = await fetchAcademicService.get(url)
