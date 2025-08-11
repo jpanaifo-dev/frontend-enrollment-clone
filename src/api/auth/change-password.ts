@@ -18,6 +18,7 @@ export const changePassword = async (
 
   try {
     const response = await fetchUserService.post(path, data)
+    console.log('response:', response)
     if (!response.ok) {
       const errorResponse: { [key: string]: string[] } = await response.json()
       const errorMessages = Object.values(errorResponse).flat()

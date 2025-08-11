@@ -33,7 +33,7 @@ export const ENDPOINTS_CONFIG = {
   ACCOUNTS: {
     ACCESS_MENU: `${BASE_PATHS.ACCOUNTS}user/accessmenu/`,
     CREATE_ACCOUNT: `${BASE_PATHS.ACCOUNTS}user/create-account/`,
-    CHANGE_PASSWORD: `${BASE_PATHS.ACCOUNTS}user/change-password/`,
+    CHANGE_PASSWORD: `${BASE_PATHS.ACCOUNTS}${MODELS_PATHS.USER}password-change/`,
     EMAIL_CHANGE: `${BASE_PATHS.ACCOUNTS}user/email-change/`,
     MENU: `${BASE_PATHS.ACCOUNTS}user/access_menu/`,
   },
