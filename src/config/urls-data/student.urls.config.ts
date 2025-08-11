@@ -45,10 +45,6 @@ export const APP_URL = {
         `${URL_BASE}/matricular/${uuid_payment}`,
     },
   },
-  PAYMENTS: {
-    URL_BASE: `${URL_BASE}/pagos`,
-    DETAIL: (uuid: string) => `/pagos/${uuid}`,
-  },
   PROFILE: {
     URL_BASE: `${URL_BASE}/perfil`,
     LANGUAGES: `${URL_BASE}/perfil/idiomas`,

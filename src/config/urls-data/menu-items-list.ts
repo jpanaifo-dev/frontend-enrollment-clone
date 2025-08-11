@@ -55,10 +55,6 @@ export const admisionMenu: {
     href: APP_URL.MATRICULA.MATRICULAS_LIST.URL_BASE,
   },
   {
-    title: 'Mis pagos',
-    href: APP_URL.PAYMENTS.URL_BASE,
-  },
-  {
     title: 'Perfil',
     href: APP_URL.PROFILE.URL_BASE,
   },

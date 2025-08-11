@@ -47,14 +47,6 @@ export const Footer = () => {
                 Matrículas
               </Link>
             </li>
-            <li>
-              <Link
-                href={APP_URL.PAYMENTS.URL_BASE}
-                className="hover:text-gray-300"
-              >
-                Pagos
-              </Link>
-            </li>
           </ul>
         </div>
 
