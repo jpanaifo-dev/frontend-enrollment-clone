@@ -96,7 +96,7 @@ export const Footer = () => {
         </div>
       </div>
       {/* Términos y condiciones */}
-      <div className="border-t border-gray-800 mt-6 pt-4 text-center text-sm text-gray-400">
+      <div className="border-t border-gray-200 mt-6 pt-4 text-center text-sm text-gray-300">
         <p>
           &copy; {new Date().getFullYear()} INSTITUTO MYCROSYSTEM. Todos los
           derechos reservados. - IMS
@@ -104,7 +104,7 @@ export const Footer = () => {
         <Link
           // href={ADMISSION_URLS_APP.HOME.TERMS_AND_CONDITIONS}
           href={'#'}
-          className="hover:text-gray-300"
+          className="hover:text-gray-100"
         >
           Términos y Condiciones
         </Link>
