@@ -6,7 +6,7 @@ import { LogoRender } from './logo-render'
 
 export const Footer = () => {
   return (
-    <footer className="bg-red-950 text-white py-4 sm:pt-20  px-6 border-t border-gray-800">
+    <footer className="bg-red-700 text-white py-4 sm:pt-20  px-6 border-t border-gray-800">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-4 gap-8 py-6">
         {/* Sección de la institución */}
         <div>
@@ -60,7 +60,7 @@ export const Footer = () => {
             </li>
             <li className="flex items-center space-x-2">
               <Mail size={16} />
-              <span>postgrado@unapiquitos.edu.pe</span>
+              <span>contacto.microsystems@gmail.com</span>
             </li>
             <li className="flex items-center space-x-2">
               <Link href="https://www.facebook.com/postgradounap/">
@@ -98,8 +98,8 @@ export const Footer = () => {
       {/* Términos y condiciones */}
       <div className="border-t border-gray-800 mt-6 pt-4 text-center text-sm text-gray-400">
         <p>
-          &copy; {new Date().getFullYear()} Escuela de Postgrado UNAP. Todos los
-          derechos reservados. - Oficina de Soporte Informático
+          &copy; {new Date().getFullYear()} INSTITUTO MYCROSYSTEM. Todos los
+          derechos reservados. - IMS
         </p>
         <Link
           // href={ADMISSION_URLS_APP.HOME.TERMS_AND_CONDITIONS}
