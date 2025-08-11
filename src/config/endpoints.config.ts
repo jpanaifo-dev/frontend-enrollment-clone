@@ -17,6 +17,7 @@ const BASE_PATHS = {
 const MODELS_PATHS = {
   USER: 'users/',
   PERSON: 'person/',
+  ENROLLMENT: 'enrollments/',
 }
 
 export const ENDPOINTS_CONFIG = {
@@ -80,16 +81,16 @@ export const ENDPOINTS_CONFIG = {
     DISPONIBILITY_ENROLLMENT: `${BASE_PATHS.ADMISSION}enrollmentstage/active-enrollment-stage/`,
   },
   ACADEMIC: {
-    ENROLLMENT: `${BASE_PATHS.ACADEMIC}enrollment/`,
+    ENROLLMENT: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}`,
     ENROLLMENT_STAGE: `${BASE_PATHS.ACADEMIC}enrollment-stages/`,
     ENROLLMENT_STAGE_PERSON: `${BASE_PATHS.ACADEMIC}enrollment-stages/active-enrollment-stage/`,
-    ENROLLMENT_VALIDATE: `${BASE_PATHS.ACADEMIC}enrollment/validate-enrollment/`,
+    ENROLLMENT_VALIDATE: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}/validate-enrollment/`,
     COURSE_GROUP: `${BASE_PATHS.ACADEMIC}enrollment-stages/course-group-enrollment-list/`,
-    ENROLLMENT_CREATE: `${BASE_PATHS.ACADEMIC}enrollments/create-enrollment/`,
+    ENROLLMENT_CREATE: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}/create-enrollment/`,
     DETAILS_STUDENT_FILE: `${BASE_PATHS.ACADEMIC}students/student-list/`,
-    DETAILS_ENROLLMENT: `${BASE_PATHS.ACADEMIC}enrollment/enrollment-details/`,
+    DETAILS_ENROLLMENT: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}/enrollment-details/`,
     STUDENT_FILE_PROGRAMS: `${BASE_PATHS.ACADEMIC}students/student-programs/`,
-    ENROLLMENT_LIST: `${BASE_PATHS.ACADEMIC}enrollment/enrollment-list/`,
+    ENROLLMENT_LIST: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}/enrollment-list/`,
   },
   PROGRAM: {
     INFO_STUDY_PLAN: `${BASE_PATHS.PROGRAM}study-plan/studyplan_info/`,
