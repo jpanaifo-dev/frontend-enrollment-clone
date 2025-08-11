@@ -41,8 +41,8 @@ export const ChangeEmailForm = ({ userAuth }: { userAuth: IUserAuth }) => {
   const form = useForm({
     resolver: zodResolver(formSchemaEmailChange),
     defaultValues: {
-      user_token: userAuth.user_token,
-      email: '',
+      user_token: userAuth.user_id,
+      email: userAuth.email || '',
     },
   })
 
@@ -109,6 +109,7 @@ export const ChangeEmailForm = ({ userAuth }: { userAuth: IUserAuth }) => {
                     <Input
                       type="email"
                       placeholder="correo@ejemplo.com"
+                      defaultValue={userAuth.email}
                       {...field}
                     />
                   </FormControl>
