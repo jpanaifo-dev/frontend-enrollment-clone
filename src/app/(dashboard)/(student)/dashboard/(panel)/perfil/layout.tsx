@@ -15,7 +15,7 @@ export default async function Layout({
   let personData: IPerson = {} as IPerson
 
   try {
-    const person = await fetchPerson(data?.person_token)
+    const person = await fetchPerson(data?.person.id.toString())
     if (person.status === 200 && person.data) {
       personData = person.data
     }
@@ -31,7 +31,9 @@ export default async function Layout({
         title={`¡Hola ${name}!`}
         description="Completa tus datos personales para continuar con el proceso de admisión."
       />
-      <LayoutProfile token={data?.person_token}>{children}</LayoutProfile>
+      <LayoutProfile token={data?.person.id.toString()}>
+        {children}
+      </LayoutProfile>
     </>
   )
 }

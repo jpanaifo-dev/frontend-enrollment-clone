@@ -16,7 +16,7 @@ export default async function Page() {
 
   try {
     const persons = await fetchPersonsInfo({
-      person_token: data?.person_token,
+      person_token: data?.person.id.toString(),
     })
     if (persons.status === 200 && persons.data) {
       personData = persons?.data[0]
@@ -36,7 +36,7 @@ export default async function Page() {
 
   return (
     <ContactInfoForm
-      person_token={data?.person_token}
+      person_token={data?.person.id.toString()}
       defaultData={personData}
     />
   )
