@@ -88,7 +88,7 @@ export const ENDPOINTS_CONFIG = {
     COURSE_GROUP: `${BASE_PATHS.ACADEMIC}enrollment-stages/course-group-enrollment-list/`,
     ENROLLMENT_CREATE: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}/create-enrollment/`,
     DETAILS_STUDENT_FILE: `${BASE_PATHS.ACADEMIC}students/student-list/`,
-    DETAILS_ENROLLMENT: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}/enrollment-details/`,
+    DETAILS_ENROLLMENT: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}enrollment-details/`,
     STUDENT_FILE_PROGRAMS: `${BASE_PATHS.ACADEMIC}students/student-programs/`,
     ENROLLMENT_LIST: `${BASE_PATHS.ACADEMIC}${MODELS_PATHS.ENROLLMENT}list-enrollments/`,
   },
