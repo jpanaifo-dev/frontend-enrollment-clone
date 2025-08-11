@@ -1,9 +1,10 @@
 import { IPerson } from '../person'
 
 export interface IUserAuth {
-  user_token: string //NO hay en el api
+  // user_token: string //NO hay en el api
   // person_token: string
   // module_token: string
+  user_id: string
   first_name: string
   last_name: string
   email: string

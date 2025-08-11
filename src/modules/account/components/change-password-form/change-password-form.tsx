@@ -52,7 +52,7 @@ export const ChangePasswordForm = ({ userToken }: ChangePasswordFormProps) => {
   const form = useForm({
     resolver: zodResolver(formSchemaChangePassword),
     defaultValues: {
-      user_token: userToken,
+      user_id: userToken,
       password: '',
       newpassword: '',
       confirm_password: '',

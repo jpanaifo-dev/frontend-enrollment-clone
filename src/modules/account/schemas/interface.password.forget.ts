@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 export const formSchemaChangePassword = z
   .object({
-    user_token: z.string(),
+    user_id: z.string(),
     password: z.string().min(1, 'La contraseña actual es obligatoria'),
     newpassword: z
       .string()
