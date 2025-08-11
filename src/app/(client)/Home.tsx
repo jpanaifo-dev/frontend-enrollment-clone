@@ -5,6 +5,7 @@ import Link from 'next/link'
 import {
   ArrowRight,
   Award,
+  CheckCircle,
   Globe,
   GraduationCap,
   Lightbulb,
@@ -14,8 +15,7 @@ import {
 
 import SectionWrapper from '@/components/app/SectionWrapper'
 import RecommendationCard from '@/components/app/RecommendationCard'
-import DocumentCard from '@/components/app/DocumentCard'
-import { DOCUMENT_URLS, RECOMMENDATIONS } from './home.constants'
+import { RECOMMENDATIONS } from './home.constants'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 
@@ -201,6 +201,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl font-bold mb-6">
+              Tu futuro tecnológico
+              <span className="text-yellow-400"> empieza aquí</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              No esperes más para dar el paso que transformará tu carrera
+              profesional. Únete a la comunidad Mycrosystem y conviértete en el
+              profesional que el mundo necesita.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <div className="flex items-center gap-2 text-yellow-400">
+                <CheckCircle className="w-5 h-5" />
+                <span>Matrícula sin costo adicional</span>
+              </div>
+              <div className="flex items-center gap-2 text-yellow-400">
+                <CheckCircle className="w-5 h-5" />
+                <span>Becas disponibles</span>
+              </div>
+              <div className="flex items-center gap-2 text-yellow-400">
+                <CheckCircle className="w-5 h-5" />
+                <span>Certificación garantizada</span>
+              </div>
+            </div>
+
+            <Button
+              size="lg"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-12 py-6 text-xl font-bold rounded-lg transition-all duration-300 hover:scale-105 mb-4"
+              asChild
+            >
+              <Link
+                href="/auth/login"
+                className="flex items-center gap-3"
+              >
+                <GraduationCap className="w-7 h-7" />
+                Matricúlate Ahora - 2025
+                <ArrowRight className="w-6 h-6" />
+              </Link>
+            </Button>
+
+            <p className="text-sm text-gray-400">
+              * Plazas limitadas. Proceso de matrícula disponible hasta febrero
+              2025
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Recommendations Section */}
       <SectionWrapper
         title="Te recomendamos"
@@ -216,27 +268,6 @@ export default function Home() {
               icon={item.icon}
             />
           ))}
-        </div>
-      </SectionWrapper>
-
-      {/* Important Documents Section */}
-      <SectionWrapper
-        title="Documentos importantes"
-        description="Descarga los documentos oficiales que necesitarás durante tu proceso de matrícula y tu vida académica."
-        center
-      >
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <DocumentCard
-            title="Reglamento académico"
-            description="Infórmate sobre los procedimientos y criterios que guían la formación en la institución."
-            url={DOCUMENT_URLS.REGULATIONS}
-            disabled
-          />
-          <DocumentCard
-            title="Manual de matrícula"
-            description="Manual paso a paso para completar tu matrícula en el sistema."
-            url={DOCUMENT_URLS.MANUAL}
-          />
         </div>
       </SectionWrapper>
     </div>
