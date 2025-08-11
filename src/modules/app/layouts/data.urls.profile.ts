@@ -6,19 +6,7 @@ export const dataUrls = [
     url: APP_URL.PROFILE.URL_BASE,
   },
   {
-    title: 'Información de contacto',
-    url: APP_URL.PROFILE.PERSONAL_INFO,
+    title: 'Cambiar contraseña',
+    url: APP_URL.PROFILE.CHANGE_PASSWORD,
   },
-  // {
-  //   title: 'Información académica',
-  //   url: ADMISSION_URLS_APP.PROFILE.ACADEMIC,
-  // },
-  // {
-  //   title: 'Información laboral',
-  //   url: ADMISSION_URLS_APP.PROFILE.JOB,
-  // },
-  // {
-  //   title: 'Idiomas',
-  //   url: ADMISSION_URLS_APP.PROFILE.LANGUAGES,
-  // },
 ]

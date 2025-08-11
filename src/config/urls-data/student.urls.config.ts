@@ -47,15 +47,7 @@ export const APP_URL = {
   },
   PROFILE: {
     URL_BASE: `${URL_BASE}/perfil`,
-    LANGUAGES: `${URL_BASE}/perfil/idiomas`,
-    JOBS: `${URL_BASE}/perfil/laboral`,
-    PERSONAL_INFO: `${URL_BASE}/perfil/contacto`,
-    ACADEMIC_INFO: `${URL_BASE}/perfil/academico`,
-  },
-  ACCOUNT: {
-    URL_BASE: `${URL_BASE}/mi-cuenta`,
-    CHANGE_PASSWORD: `${URL_BASE}/mi-cuenta/cambiar-contrasena`,
-    UPDATE: `${URL_BASE}/mi-cuenta/actualizar`,
+    CHANGE_PASSWORD: `${URL_BASE}/perfil/cambiar-contrasena`,
   },
 }
 
