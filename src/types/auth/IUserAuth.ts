@@ -1,7 +1,7 @@
-import { IPerson } from "../person"
+import { IPerson } from '../person'
 
 export interface IUserAuth {
-  // user_token: string
+  user_token: string //NO hay en el api
   // person_token: string
   // module_token: string
   first_name: string
@@ -13,8 +13,6 @@ export interface IUserAuth {
   expires_at: number // Tiempo de expiración del refresh_token en milisegundos
   person: IPerson
 }
-
-
 
 export interface IUserSuccessCreate {
   username: string
