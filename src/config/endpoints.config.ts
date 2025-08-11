@@ -141,6 +141,6 @@ export const ENDPOINTS_CONFIG = {
     CONCEPT: `${BASE_PATHS.ECONOMIC}concept/`,
   },
   DOWNLOAD: {
-    DOWNLOAD_CERTIFICATE: `${BASE_PATHS.REPORT}registration-certificate-report/`,
+    DOWNLOAD_CERTIFICATE: `${BASE_PATHS.REPORT}registration-certificate/`,
   },
 }
