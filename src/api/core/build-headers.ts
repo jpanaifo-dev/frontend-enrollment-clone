@@ -11,14 +11,14 @@ export async function buildHeaders(
   const session = await decrypt(cookie)
   const userData: IUserAuth = (await session?.data) as unknown as IUserAuth
   const token = userData?.access_token
-  const uuid_user = userData?.user_token
+  // const uuid_user = userData?.user_token
 
   const { TOKEN } = SERVICES_MODULES[module]
   const headers: Record<string, string> = {}
 
   if (TOKEN) headers['app-token'] = TOKEN
   if (token) headers['Authorization'] = `Bearer ${token}`
-  if (uuid_user) headers['user-token'] = uuid_user
+  // if (uuid_user) headers['user-token'] = uuid_user
 
   return headers
 }
