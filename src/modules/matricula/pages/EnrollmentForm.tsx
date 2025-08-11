@@ -224,8 +224,6 @@ export const EnrollmentForm = ({
     setShowConfirmationDialog(true)
   }
 
-  console.log('errors', errors)
-
   const handleConfirmDialog = async () => {
     setShowConfirmationDialog(false)
     setIsSubmitting(true)
@@ -239,7 +237,6 @@ export const EnrollmentForm = ({
             course_group_id: course.course_group_id,
           })),
       }
-      console.log('Enrollment Data:', enrollmentData)
       const response = await createEnrollment(enrollmentData)
       // Aquí puedes agregar redirección o notificación de éxito
       if (response.status === 200 || response.status === 201) {

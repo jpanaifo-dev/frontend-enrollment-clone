@@ -25,7 +25,6 @@ export const fetchEnrrollmentStageList = async ({
 
   try {
     const response = await fetchAcademicService.get(url)
-    console.log(response)
     if (!response.ok) {
       const errorResponse: {
         [key: string]: string[]
@@ -156,7 +155,6 @@ export const fetchDetailsStudentFile = async (
 
   try {
     const response = await fetchAcademicService.get(url)
-    console.log('Response from student details:', response)
     if (!response.ok) {
       const errorResponse: {
         [key: string]: string[]
