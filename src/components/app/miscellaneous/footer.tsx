@@ -88,7 +88,7 @@ export const Footer = () => {
         {/* Sección de certificación */}
         <div>
           <Image
-            src="/brands/licenciada_resolucion_WHITE.png"
+            src="/brands/isologo_ims_white.png"
             alt="SUNEDU"
             width={200}
             height={200}
