@@ -58,8 +58,4 @@ export const admisionMenu: {
     title: 'Perfil',
     href: APP_URL.PROFILE.URL_BASE,
   },
-  {
-    title: 'Mi cuenta',
-    href: APP_URL.ACCOUNT.URL_BASE,
-  },
 ]
