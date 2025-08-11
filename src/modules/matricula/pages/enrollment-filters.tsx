@@ -48,7 +48,7 @@ export const EnrollmentFilters = (props: EnrollmentFiltersProps) => {
   }, [dateParam])
 
   const handleChange = (value: string) => {
-    if (value === programsAssigned[0]?.uuid) {
+    if (value === programsAssigned[0]?.id.toString()) {
       updateFilter({
         student: '',
       })
@@ -87,7 +87,7 @@ export const EnrollmentFilters = (props: EnrollmentFiltersProps) => {
         </Label>
         <Select
           onValueChange={handleChange}
-          defaultValue={uuid_student || programsAssigned[0]?.uuid}
+          defaultValue={uuid_student || programsAssigned[0]?.id.toString()}
         >
           <SelectTrigger className="w-full bg-white">
             <SelectValue placeholder="Selecciona un programa" />
@@ -96,8 +96,8 @@ export const EnrollmentFilters = (props: EnrollmentFiltersProps) => {
             <SelectGroup>
               {programsAssigned.map((program) => (
                 <SelectItem
-                  key={program.uuid}
-                  value={program.uuid}
+                  key={program.id.toString()}
+                  value={program.id.toString()}
                 >
                   {program.program_name}
                 </SelectItem>
