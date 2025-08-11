@@ -1,6 +1,5 @@
 'use client'
 import { dataUrls } from './data.urls.profile'
-import { DownloadSection } from '@/modules/account'
 import { useFormPersonStore } from '@/modules/account/hooks/use-form-person-store'
 import { useRouter } from 'next/navigation'
 import {
@@ -18,7 +17,6 @@ import { LayoutProfileWrapper } from '@/modules/app'
 
 export function LayoutProfile({
   children,
-  token,
 }: {
   children: React.ReactNode
   token?: string
@@ -40,7 +38,6 @@ export function LayoutProfile({
   return (
     <div className="bg-transparent w-full">
       <LayoutProfileWrapper
-        headerContent={<DownloadSection person_token={token} />}
         items={dataUrls}
         handleNavigation={(path: string) => {
           if (isDirty) {

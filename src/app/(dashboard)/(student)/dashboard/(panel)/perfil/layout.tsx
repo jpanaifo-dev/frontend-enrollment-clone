@@ -31,9 +31,7 @@ export default async function Layout({
         title={`¡Hola ${name}!`}
         description="Completa tus datos personales para continuar con el proceso de admisión."
       />
-      <LayoutProfile token={data?.person.id.toString()}>
-        {children}
-      </LayoutProfile>
+      <LayoutProfile>{children}</LayoutProfile>
     </>
   )
 }
