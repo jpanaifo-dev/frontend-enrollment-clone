@@ -1,8 +1,6 @@
 import { SERVICES_MODULES, ServicesModulesType } from '@/config/modules.cofig'
 import { buildHeaders } from './build-headers'
 
-// type Cache = 'force-cache' | 'no-cache' | 'only-if-cached' | 'reload'
-
 class ApiClient {
   private module: keyof ServicesModulesType
   private baseUrl: string
@@ -27,7 +25,7 @@ class ApiClient {
     const headers = {
       ...defaultHeaders,
       ...(options.headers || {}),
-      ...(customHeaders || {})
+      ...(customHeaders || {}),
     }
     const url = `${this.baseUrl}${path}`
     return fetch(url, { ...options, headers })
@@ -63,7 +61,9 @@ class ApiClient {
       {
         method: 'POST',
         body: isFormData ? (body as FormData) : JSON.stringify(body),
-        headers: isFormData ? undefined : { 'Content-Type': 'application/json' }
+        headers: isFormData
+          ? undefined
+          : { 'Content-Type': 'application/json' },
       },
       customHeaders
     )
@@ -80,7 +80,9 @@ class ApiClient {
       {
         method: 'PUT',
         body: isFormData ? (body as FormData) : JSON.stringify(body),
-        headers: isFormData ? undefined : { 'Content-Type': 'application/json' }
+        headers: isFormData
+          ? undefined
+          : { 'Content-Type': 'application/json' },
       },
       customHeaders
     )
@@ -97,7 +99,9 @@ class ApiClient {
       {
         method: 'PATCH',
         body: isFormData ? (body as FormData) : JSON.stringify(body),
-        headers: isFormData ? undefined : { 'Content-Type': 'application/json' }
+        headers: isFormData
+          ? undefined
+          : { 'Content-Type': 'application/json' },
       },
       customHeaders
     )

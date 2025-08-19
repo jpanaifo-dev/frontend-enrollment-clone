@@ -4,12 +4,12 @@ import {
   fetchCoreService,
   fetchPersonService,
   fetchAdmissionService,
-  fetchProgramService,
-  fetchFileService,
   fetchReportService,
-  fetchEvaluationService,
   fetchAcademicService,
-  fetchEconomicService,
+  // fetchProgramService,
+  // fetchFileService,
+  // fetchEvaluationService,
+  // fetchEconomicService,
 } from './fetch-services'
 
 export {
@@ -18,10 +18,10 @@ export {
   fetchCoreService,
   fetchPersonService,
   fetchAdmissionService,
-  fetchProgramService,
-  fetchFileService,
-  fetchReportService,
-  fetchEvaluationService,
   fetchAcademicService,
-  fetchEconomicService,
+  fetchReportService,
+  // fetchProgramService,
+  // fetchFileService,
+  // fetchEvaluationService,
+  // fetchEconomicService,
 }

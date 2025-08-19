@@ -21,6 +21,8 @@ export default async function Page() {
     }),
   ])
 
+  console.log('Enrollment Stage List Response:', response)
+
   return (
     <AcademicPortal
       enrollmentsList={response.data || []}
